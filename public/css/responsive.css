@@ -1,0 +1,1854 @@
+
+  
+  
+  
+  
+  
+  
+  @media only screen and (min-width: 1279px) and (max-width: 1550px) {
+  .nftmax-adashboard.nftmax-close {
+    padding-left: 7%;
+ }
+
+
+
+
+ .nftmax-adashboard-df {
+  display: flex !important;
+}
+.nftmax-adashboard-right-two{
+  width: 424px !important;
+}
+.massage-box-top {
+justify-content: space-between;
+  gap: 0;
+}
+
+
+ .calender {
+  margin-top: 0px ;
+}
+
+ .nftmax-header__inner .header-left {
+  gap: 45px;
+}
+  .nftmax-header.nftmax-close {
+    padding-left: 7%;
+ }
+
+ .nftmax-header__inner .header-left .header-search .form-control {
+  width: 285px;
+}
+
+ .nftmax-adashboard-right-res-df{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 30px;
+ }
+
+ .nftmax-header__inner .header-left .header-search .form-control {
+  width: 344px;
+}
+
+.nftmax-header__inner .header-right {
+  padding-right: 20px;
+}
+
+.nftmax-header__inner .header-right .profile ul {
+  left: -105px;
+}
+
+ .nftmax-adashboard .nftmax-adashboard-right {
+  width: 100%;
+}
+
+.my-walet-main-box{
+  width: 50%;
+}
+
+.team-chat {
+  margin-top: 0px;
+  width: 100%;
+}
+
+ .nftmax-adashboard {
+  transition: all 0.4s;
+  width: 100%;
+  padding: 170px 50px 50px 355px;
+  gap: 42px;
+  display: block;
+}
+
+ .setting-main .password-from-item-btn .btn-one {
+  width: 50%;
+}
+
+
+ .nftmax-header__inner .header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.nftmax-header {
+  padding-left: 343px;
+ padding-right: 0px; 
+}
+
+
+
+
+
+
+
+
+.list-btn-text h5{
+  font-size: 14px;
+}
+
+.tabel-main{
+  overflow-x: scroll;
+}
+
+#expendable-data-table{
+ 
+  width: 800px;
+}
+
+.responsive-pt-25px {
+  padding-top: 0px;
+}
+
+
+.team-chat .team-chat-head .team-chat-head-item .right h3 {
+  font-size: 16px;
+}
+
+
+.integrations-item .integrations-item-inner .integrations-item-inner-img .integrations-item-inner-text h2 {
+  font-size: 12px;
+}
+
+.integrations-item .integrations-item-btn a {
+  padding: 10px 65px;
+}
+
+.integrations-item .integrations-item-text p {
+  font-size: 16px;
+}
+
+
+.massage-box-top {
+  padding: 19px 0px 19px 23px;
+  width: 100%;
+}
+
+.massage-main-box {
+  padding: 24px 24px 56px 24px;
+}
+
+.massage-main-box .massage-main-box-item .pinned-messages-item .pinned-messages-item-inner .pinned-messages-item-img .pinned-messages-item-text h6 {
+  font-size: 16px;
+}
+
+.massage-main-box .massage-main-box-item .pinned-messages-item .pinned-messages-item-inner .pinned-messages-item-right-text h6 {
+  font-size: 14px;
+}
+
+.setting-main .tab-content .up-date-profile-main {
+  padding: 51px 20px 0 0;
+}
+
+.setting-main .tab-content .up-date-cover-main {
+  padding: 51px 20px 0 0;
+}
+
+.setting-main .tab-content .up-date-cover-main .up-date-profile-img .up-date-profile-img-btn {
+  position: absolute;
+  bottom: 4px;
+  right: -18px;
+}
+
+
+.setting-main .tab-content .folder-main .folder-main-item-two .folder-item .folder-inner {
+
+  margin-right: 52px;
+
+}
+.setting-main .folder-main-project {
+  padding: 0 0 0 0;
+}
+
+
+.revenue-inner-text{
+  display: none;
+}
+
+
+.efficiency-item .efficiency-item-chart-main {
+  display: block;
+}
+
+.efficiency-item-chart-main-text{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.efficiency-item .efficiency-item-chart-main .efficiency-item-chart-text-two {
+  padding-top: 0px;
+}
+
+.sub-earnings-user{
+  display: none;
+}
+
+.total-earnings .total-earnings-main .sub-earnings .text h6 {
+  font-size: 14px;
+}
+
+
+
+
+.efficiency-item {
+  padding: 20px 10px;
+}
+
+
+.most-location-item .most-location-item-two .most-location-item-two-text .text-item-inner::after {
+  width: 100%;
+}
+
+
+.setting-main .payment-item-add {
+  padding: 63px 50px;
+}
+
+.setting-main .payment-item .payment-text {
+  padding-top: 7px;
+}
+
+.setting-main .payment-item .payment-text h5 {
+  letter-spacing: 0.3px;
+  font-size: 13px;
+}
+
+.row .bb-top {
+  display: none;
+}
+
+
+
+.sign-up-top .sign-up-main {
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 130px;
+  padding-bottom: 76px;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.sign-up-top .sign-up-main .sign-up-from .sign-up-from-item .sign-up-btn-btm {
+  margin-top: 50px;
+}
+
+.most-locations .most-locations-inner-item {
+  display: block;
+}
+
+#world-map {
+  width: 100% !important;
+  margin-top: 20px;
+}
+
+.task-summary .task-summary-item-main {
+  display: block;
+}
+
+.task-summary-item{
+  margin-bottom: 20px;
+}
+
+.col-ml-45px {
+  padding-left: 30px;
+}
+
+
+
+.tabel-main-two .bg-green {
+  display: none;
+}
+
+.tabel-main-two .bg-yellow {
+  display: none;
+}
+.tabel-main-two .bg-red {
+  display: none;
+}
+.coming-soon {
+  padding: 120px 0;
+  height: 100%;
+}
+
+
+.withdraw-item {
+ width: 100%;
+ margin-bottom: 0;
+
+
+}
+
+
+.revenue-item-res{
+  margin-top: 30px;
+}
+
+#expendable-data-table {
+  width: 100%;
+}
+
+.support-customer-res-df{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.complete-profile {
+  margin-top: 30px;
+}
+.support-customer-note {
+  margin-top: 0px;
+}
+.support-customer {
+  width: 100%;
+}
+.support-customer-middel-df{
+  width: 100%;
+}
+
+.setting-main .w-1150px {
+  width: 100%;
+}
+.nftmax-header__inner .header-right {
+  display: flex;
+  gap: 20px;
+}
+
+.nftmax-header__inner .header-right .profile {
+  padding-left: 20px;
+}
+
+}
+
+
+
+
+
+
+@media(min-width:1200px) and (max-width:1399.98px){
+
+  .nftmax-adashboard-right-res-df {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.password-img img{
+  width: 100%;
+}
+
+.team-chat {
+width: 100%;
+}
+
+.nftmax-adashboard-right-res-df{
+  margin-top: 30px;
+}
+
+.nftmax-header__inner .header-right .profile ul {
+  left: -246px;
+}
+
+.nftmax-header__inner .header-right .profile {
+  padding-left: 15px;
+}
+
+.profile-taitel{
+  display: none;
+}
+
+.nftmax-header__inner .header-right {
+  gap: 15px;
+  padding-right: 20px;
+}
+
+.team-chat {
+  margin-top: 0px;
+}
+
+.my-walet-main-box{
+  width: 50%;
+}
+
+.nftmax-adashboard {
+  display: block;
+}
+
+.nftmax-adashboard .nftmax-adashboard-right {
+  width: 100%;
+}
+
+.calender {
+  margin-top: 0px ;
+}
+
+
+.efficiency-item{
+  width: 100%;
+}
+
+.withdraw-item {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.revenue-item-res{
+  margin-top: 30px;
+}
+.nftmax-adashboard-df {
+  display: flex;
+}
+.nftmax-adashboard-right-two{
+  width: 424px !important;
+}
+.massage-box-top {
+justify-content: space-between;
+  gap: 0;
+}
+
+.massage-box-from {
+  padding: 50px 0px 50px 0px;
+}
+
+
+.support-customer-res-df{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.complete-profile {
+  margin-top: 30px;
+}
+.support-customer-note {
+  margin-top: 0px;
+}
+.support-customer {
+  width: 100%;
+}
+.support-customer-middel-df{
+  width: 100%;
+}
+
+.setting-main .w-1150px {
+  width: 100%;
+}
+
+}
+
+
+
+
+
+
+@media only screen and (min-width: 0px) and (max-width: 1278px) {
+  .nftmax-smenu.nftmax-close .logo-two {
+display: none;
+}
+  .nftmax-smenu {
+    width: 280px !important;
+    transform: translateX(-100%);
+ }
+  .nftmax-smenu .nftmax-logo__icon {
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+ }
+  .nftmax-smenu .menu-bar__count {
+    right: -30px;
+ }
+  .nftmax-smenu .admin-menu {
+    padding: 15px 15px;
+    padding-top: 30px;
+ }
+  .nftmax-smenu.nftmax-close {
+    transform: translatex(0%);
+    padding-bottom: 100px;
+ }
+  .nftmax-smenu.nftmax-close .close-icon {
+    right: 0;
+    border-radius: 0;
+    top: 25px;
+ }
+  .nftmax-smenu.nftmax-close .logo {
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 30px 50px 29px;
+ }
+  .nftmax-smenu.nftmax-close .logo a {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    display: inline;
+ }
+
+  .nftmax-smenu.nftmax-close  .has-child-text {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    display: inline;
+    display: inline-block;
+ }
+  .nftmax-smenu.nftmax-close    .has-child-icon-two {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    display: inline;
+ }
+  .nftmax-smenu.nftmax-close    
+  .has-child-profile-1 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    display: inline;
+ }
+  .nftmax-smenu.nftmax-close   
+  .has-child-profile-2 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    display: inline;
+ }
+  .nftmax-smenu.nftmax-close    
+  .has-child-profile-3 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    display: inline;
+ }
+
+  .nftmax-smenu.nftmax-close .menu-bar li {
+    text-align: left;
+    padding: 0 20px;
+    display: block;
+ }
+  .nftmax-smenu.nftmax-close .nftmax-menu-icon {
+    margin-right: 14px !important;
+ }
+  .nftmax-header {
+    border-bottom: 1px solid rgba(83, 86, 251, 0.16);
+    backdrop-filter: blur(4px);
+    padding-left: 25px;
+    padding-right: 25px;
+ }
+
+  .close-icon {
+    display: block !important;
+ }
+  .nftmax-adashboard {
+    padding-left: 25px;
+    padding-right: 25px;
+ }
+  .nftmax-adashboard.nftmax-close {
+    padding-left: 25px;
+ }
+  .nftmax-header.nftmax-close {
+    padding-left: 25px;
+ }
+
+
+
+ .nftmax-header__inner .header-left .header-text p {
+ display: none;
+}
+
+.nftmax-header__inner .header-left {
+  gap: 20px;
+}
+
+.nftmax-header__inner .header-right .profile .profile-taitel h3 {
+  font-size: 13px;
+}
+
+.nftmax-header__inner .header-right .profile {
+  gap: 10px;
+  padding-left: 10px;
+}
+
+.nftmax-header__inner .header-right {
+  display: flex;
+  gap: 10px;
+}
+
+.nftmax-header__inner .header-right .icon-item {
+  display: flex;
+  gap: 10px;
+}
+
+
+.list-btn-text h5{
+  font-size: 14px;
+}
+
+
+#expendable-data-table {
+  width: 100%;
+}
+
+.tabel-main{
+  overflow-x: scroll;
+}
+
+.my-walet-main-box .quick-transfr .quick-trandfr-btn .btn .btn-text-two {
+  margin-left: 50px;
+}
+
+.team-chat .team-chat-head .team-chat-head-item .right h3 {
+  font-size: 16px;
+}
+
+.my-walet-main-box .my-walet-item-box {
+  padding: 17px 18px 38px;
+}
+
+.team-chat {
+  padding: 17px 18px 38px;
+  overflow: hidden;
+}
+
+.responsive-pt-25px {
+   padding-top: 0px;
+}
+
+
+.integrations-item .integrations-item-btn a {
+  padding: 10px 50px;
+}
+
+.integrations-item .integrations-item-inner .integrations-item-inner-img .integrations-item-inner-text h2 {
+  font-size: 10px;
+}
+
+.integrations-item .integrations-item-text p {
+  font-size: 15px;
+}
+
+.integrations-item .integrations-item-btn {
+  text-align: center;
+}
+
+.massage-box-top {
+  padding: 19px 019px 23px;
+  width: 100%;
+}
+
+.massage-main-box {
+  padding: 24px 24px 56px 10px;
+}
+
+
+.massage-main-box .massage-main-box-item .pinned-messages-item .pinned-messages-item-inner .pinned-messages-item-img .pinned-messages-item-text h6 {
+  font-size: 14px;
+}
+
+.massage-main-box .massage-main-box-item .pinned-messages-item .pinned-messages-item-inner .pinned-messages-item-right-text h6 {
+  font-size: 14px;
+}
+
+.massage-main-box .massage-main-box-item .pinned-messages-item .pinned-messages-item-inner .pinned-messages-item-img .pinned-messages-item-text p {
+  font-size: 10px;
+}
+
+.last-name{
+  margin-top: 24px;
+}
+
+.setting-main .tab-content .up-date-profile-main .up-date-profile p {
+display: none;
+}
+
+.setting-main .tab-content .up-date-cover-main .up-date-profile p {
+  display: none;
+}
+
+.up-date-profile-img img{
+  width: 155px;
+}
+
+.setting-main .tab-content .up-date-cover-main .up-date-profile-img .up-date-profile-img-btn {
+  position: absolute;
+  bottom: 4px;
+  right: 77px;
+}
+
+.setting-main .tab-content .up-date-profile-main {
+  padding: 30px 0 0 0;
+}
+
+
+
+.setting-main .tab-content .up-date-cover-main {
+  padding: 25px 0 0 0;
+}
+
+.setting-main .tab-content .folder-main .folder-main-item-two .folder-item .folder-inner {
+  margin-right: 26px;
+}
+
+.setting-main .folder-main-project {
+  padding: 0 0 0 0;
+}
+
+.setting-main .folder-main-project .folder-main-project-info .folder-main-project-info-item .folder-main-project-info-inner ul li span {
+  font-size: 14px;
+}
+
+.nftmax-header__inner .header-right .profile ul {
+  left: -115px;
+
+}
+
+.sub-earnings-user{
+  display: none;
+}
+
+.total-earnings .total-earnings-main .sub-earnings .text h6 {
+  font-size: 13px;
+}
+
+.revenue-item .revenue-inner .revenue-inner-text h2 {
+ display: none;
+}
+.revenue-item .revenue-inner .revenue-inner-df {
+  gap: 20px;
+}
+
+.efficiency-item .efficiency-item-chart-main {
+  display: block;
+}
+
+.efficiency-item-chart-main-text{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.efficiency-item .efficiency-item-chart-main .efficiency-item-chart-text-two {
+  padding-top: 0px;
+}
+
+.efficiency-item {
+  padding: 20px 5px;
+}
+
+.nftmax-header__inner .header-right .profile ul {
+  left: -232px;
+}
+
+
+.most-location-item .most-location-inner .most-location-item-text-right {
+  display: none;
+  gap: 6px;
+}
+.most-location-item .most-location-item-two .most-location-item-two-text .text-item-inner::after {
+  width: 100%;
+}
+
+.integrations-item .integrations-item-inner .integrations-item-inner-img {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+
+.setting-main .password-from-item-btn .btn-one {
+  width: 100%;
+}
+
+
+
+}
+
+
+@media(min-width:992px) and (max-width:1199.98px){
+
+  .nftmax-adashboard-right-res-df {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.password-img img{
+  width: 100%;
+}
+
+
+.calender {
+  margin-top: 0px ;
+}
+
+.team-chat {
+  padding: 17px 18px 38px;
+  width: 100%;
+}
+
+.team-chat {
+  margin-top: 0px;
+}
+
+.my-walet-main-box{
+  width: 55%;
+}
+  .setting-main .tab-content .up-date-cover-main .up-date-profile-img .up-date-profile-img-btn {
+    position: absolute;
+    bottom: 4px;
+    right: 35px;
+  }
+
+  .user-details-item-box .user-details-text h6 {
+
+    padding: 0 0px;
+  }
+
+  .setting-main .tab-content  .notification-main-res{
+    padding-right: 0;
+  }
+
+  
+
+  .setting-main .tab-content .folder-main .folder-main-item .folder-item .folder-inner {
+    text-align: center;
+    margin-right: 75px;
+    margin-bottom: 30px;
+}
+
+.setting-main .tab-content .folder-main .folder-main-item-two .folder-item {
+  display: flex;
+  justify-content: center;
+}
+
+.payment-item {
+  display: none;
+}
+
+.payment-item-add{
+  display: none;
+}
+.setting-main .bb-top {
+  display: none;
+}
+
+.sign-up-top .sign-up-main-two {
+display: none;
+}
+
+.sign-up-top .sign-up-main .sign-up-from .sign-up-from-item .sign-up-btn-btm {
+  margin-top: 50px;
+}
+
+
+.most-locations .most-locations-inner-item {
+  display: block;
+}
+
+#world-map {
+  width: 100% !important;
+  height: 100%;
+  margin-top: 20px;
+}
+
+
+.task-summary .task-summary-item-main {
+  display: block;
+}
+
+.task-summary-item{
+  margin-bottom: 20px;
+}
+
+.task-summary {
+  padding: 24px 20px 26px;
+}
+
+.col-ml-45px {
+  padding-left: 12px;
+}
+
+
+.tabel-main-two .bg-green {
+  display: none;
+}
+
+.tabel-main-two .bg-yellow {
+  display: none;
+}
+.tabel-main-two .bg-red {
+  display: none;
+}
+
+.coming-soon {
+  padding: 100px 0;
+  height: 100%;
+}
+
+.coming-soon .coming-soon-item {
+  display: flex;
+  justify-content: center;
+}
+
+.nftmax-adashboard .nftmax-adashboard-right {
+  width: 100%;
+  margin-top: 30px;
+}
+.nftmax-adashboard {
+  display: block;
+}
+
+.total-earnings-inner .total-earnings-price-btm-img {
+  margin-top: 8px;
+  width: 100%;
+}
+
+
+
+.efficiency-item{
+  width: 100%;
+}
+
+.withdraw-item{
+  width: 100%;
+}
+
+.revenue-item-res{
+  margin-top: 30px;
+}
+
+.withdraw-item {
+  margin-bottom: 0;
+}
+
+
+.nftmax-adashboard-df{
+  display: flex;
+}
+
+
+.nftmax-adashboard-right-two{
+  width: 424px !important;
+  margin-top: 0 !important;
+}
+.massage-box-top {
+justify-content: space-between;
+  gap: 0;
+}
+
+.massage-box-from {
+  padding: 50px 0px 50px 0px;
+}
+
+
+
+.support-customer-res-df{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.complete-profile {
+  margin-top: 30px;
+}
+.support-customer-note {
+  margin-top: 0px;
+}
+.support-customer {
+  width: 100%;
+}
+.support-customer-middel-df{
+  width: 100%;
+}
+
+.setting-main .w-1150px {
+  width: 100%;
+}
+
+.profile-taitel{
+  display: none;
+}
+
+}
+
+
+
+
+
+@media(min-width:768px) and (max-width:991.98px){
+  .massage-box-top {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 0;
+  }
+
+  .nftmax-adashboard-df {
+    display: flex !important;
+  }
+
+  .nftmax-adashboard .nftmax-adashboard-right-two {
+    width: 270px !important;
+}
+
+
+
+
+.massage-box-from {
+  padding: 50px 0px 50px 0px;
+}
+
+.user-tabel-heading .user-tabel-heading-item .user-tabel-heading-item-search-box {
+  border-right: 2px solid transparent;
+  width: 100%;
+}
+
+.user-tabel-heading .user-tabel-heading-item .user-tabel-heading-item-location .btn {
+  border: 1px solid transparent;
+}
+
+  
+  .nftmax-adashboard .nftmax-adashboard-left-two {
+    width: 100%;
+  }
+  
+
+  .nftmax-adashboard-right-res-df {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.efficiency-item-my-wallet{
+  display: none;
+}
+
+.withdraw-item{
+ width: 100%;
+ height: 100%;
+}
+
+
+
+.efficiency-item{
+  width: 100%;
+  margin-top: 20px;
+}
+
+.calender {
+  margin-top: 0px ;
+}
+
+.team-chat {
+  margin-top: 0px;
+}
+
+.my-walet-main-box{
+  width: 50%;
+}
+
+  .folder-main-project{
+    margin-top: 30px;
+  }
+
+  .nftmax-adashboard {
+    display: block;
+}
+
+  .nftmax-adashboard .nftmax-adashboard-right {
+    width: 100%;
+    margin-top: 30px;
+}
+
+  .summaryy-img-mt-25px {
+    margin-top: 25px;
+  }
+
+  .header-text{
+    display: none;
+  }
+
+
+  .profile-taitel{
+    display: none;
+  }
+
+
+  .nftmax-header__inner .header-right .profile {
+    border-left: 2px solid transparent;
+    padding-left: 0px;
+}
+
+.nftmax-header__inner .header-right {
+  display: flex;
+  gap: 10px;
+}
+
+
+.tabel-main{
+  overflow-x: scroll;
+
+}
+
+
+#expendable-data-table {
+  width: 100%;
+}
+
+.responsive-pt-25px {
+  padding-top: 0px;
+}
+
+.md-mt-25px{
+  margin-top: 25px;
+}
+
+.massage-box-top {
+  padding: 19px 1px 19px 23px;
+  width: 100%;
+}
+
+.massage-main-box .massage-main-box-item .pinned-messages-item .pinned-messages-item-inner .pinned-messages-item-img .pinned-messages-item-text h6 {
+  font-size: 16px;
+}
+
+.withdraw-item .withdraw-item-text-box h3 {
+  font-size: 16px;
+}
+
+.withdraw-item .withdraw-item-text-box h2 {
+  font-size: 20px;
+}
+
+
+.last-name{
+  margin-top: 24px;
+}
+
+.setting-main .tab-content .notification-main {
+  padding-right: 25px;
+}
+
+
+.setting-main .tab-content .folder-main .folder-main-item-two .folder-item .folder-inner {
+  margin-right: 26px;
+}
+
+.setting-main .tab-content .folder-main .folder-main-item .folder-item .folder-inner {
+  margin-right: 26px;
+}
+
+
+.payment-item-two{
+  margin-top: 40px;
+}
+
+
+.efficiency-item .efficiency-item-chart-main {
+  display: block;
+}
+
+.efficiency-item-chart-main-text{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.efficiency-item .efficiency-item-chart-main .efficiency-item-chart-text-two {
+  padding-top: 0px;
+}
+
+
+.revenue-inner-text{
+  display: none;
+}
+
+.efficiency-item .efficiency-item-inner .efficiency-item-text h2 {
+  font-size: 16px;
+}
+
+.col-lg-pl-20px {
+  padding-left: 0;
+}
+
+.nftmax-header__inner .header-right .profile ul {
+
+  left: -259px;
+
+}
+
+
+.most-location-item .most-location-inner .most-location-item-text-right p {
+  display: none;
+  }
+
+  .my-walet-main-box-res{
+    margin-top: 30px;
+  }
+
+  .efficiency-item-res{
+    margin-top: 30px;
+  }
+
+  .my-walet-main-box-res{
+    margin-top: 30px;
+  }
+
+  .summaryy-img-mt-25px-res{
+    margin-top: 0;
+  }
+
+
+  .setting-main .tab-content {
+    padding: 32px 20px 65PX 44PX;
+}
+
+
+.setting-main .tab-content .up-date-profile-main .up-date-profile h2 {
+text-align: center;
+}
+
+.setting-main .tab-content .up-date-cover-main .up-date-profile h2 {
+  text-align: center;
+}
+
+
+.setting-main .tab-content .up-date-profile-main .up-date-profile-img .up-date-profile-img-btn {
+  position: absolute;
+  right: 100px;
+}
+
+
+.setting-main .tab-content  .notification-main-res{
+  padding-right: 0;
+}
+
+.notification-inner-text{
+  padding-right: 20px;
+}
+
+
+.setting-main .tab-content .folder-main .folder-main-item-two .folder-item {
+  display: flex;
+  justify-content: center;
+}
+
+
+.row .bb-top {
+  display: none;
+}
+
+.col-pr-40px {
+  padding-right: 20px;
+}
+
+
+.setting-main .password-img {
+  margin-top: 50px;
+}
+
+.sign-up-top .sign-up-main-two {
+  display: none;
+}
+
+
+.sign-up-top .sign-up-main {
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 130px;
+  padding-bottom: 76px;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+
+.sign-up-top .sign-up-main .sign-up-from .sign-up-from-item .sign-up-btn-btm {
+  margin-top: 50px;
+}
+
+.task-summary .task-summary-item-main {
+  gap: 25px;
+}
+
+.task-summary .task-summary-item-main .task-summary-item {
+  width: 100%;
+}
+
+
+.col-ml-45px {
+  padding-left: 0;
+}
+
+
+
+.coming-soon {
+  padding: 50px 0;
+  height: 100%;
+}
+
+.coming-soon .coming-soon-item {
+  display: flex;
+  justify-content: center;
+}
+
+.support-customer-note {
+  margin-top: 0px;
+}
+
+
+.support-customer-res-df{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.complete-profile {
+  margin-top: 30px;
+}
+
+.setting-main .w-1150px {
+  width: 100%;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .nftmax-adashboard {
+    padding-left: 30px;
+    padding-right: 30px;
+ }
+
+ .setting-main .w-1150px {
+  width: 100%;
+}
+
+.notifaction-btn{
+  margin-left: 50px;
+}
+
+ .support-customer {
+  margin-top: 30px;
+}
+
+.support-customer-note {
+  margin-top: 30px;
+}
+
+.complete-profile {
+  margin-top: 30px;
+}
+
+ #calendar{
+  display: none;
+ }
+
+ .fc-toolbar-chunk .icon {
+  display: none;
+}
+
+ .nftmax-adashboard .nftmax-adashboard-left-two {
+  width: 100%;
+  margin-top: 30px;
+}
+
+  .nftmax-header {
+    padding-left: 5px;
+    padding-right: 5px;
+ }
+  .nftmax-adashboard.nftmax-close {
+    padding-left: 5px;
+    padding-right: 5px;
+ }
+  .nftmax-header.nftmax-close {
+    padding-left: 5px;
+    padding-right: 5px;
+ }
+  .nftmax-header__inner .header-left {
+    display: none;
+ }
+.profile-taitel{
+  display: none;
+}
+  .nftmax-header .nftmax-header__inner {
+    padding: 0 10px;
+ }
+
+
+
+.tabel-main{
+  overflow-x: scroll;
+}
+
+
+
+.col-lg-pl-20px {
+  padding-left: 0px;
+}
+
+.my-walet-main-box{
+  margin-top: 25px;
+}
+
+
+.team-chat {
+  margin-top: 25px;
+}
+
+.col-responsive-padd-top-20px{
+  padding-top: 20px;
+}
+
+#expendable-data-table {
+  vertical-align: inherit;
+  width: 800px;
+}
+.responsive-pt-25px {
+  padding-top: 20px;
+}
+
+
+.calender {
+  margin-top: 25px;
+}
+
+
+
+.integrations-pt-25px {
+  margin-top: 25px;
+}
+
+
+.massage-box-top {
+  width: 100%;
+  padding: 19px 0 19px 23px;
+
+}
+
+.massage-box .massage-box-item .massage-box-inner-two {
+  margin-top: 40px;
+  margin-right: 15px;
+}
+
+.massage-box-top .header__area-menubar-right-sidebar-popup {
+  width: 100%;
+}
+
+.massage-box-from {
+  padding: 50px 0px 50px 0px;
+}
+
+.massage-box-top {
+  gap: 100px;
+}
+
+
+
+.col-lg-pr-35px {
+  padding-right: 0;
+}
+
+
+.summaryy-img-mt-25px{
+  margin-top: 25px;
+}
+
+.d-flex {
+  display: block !important;
+}
+
+.last-name{
+  margin-top: 24px;
+}
+
+.setting-main .tab-content .notification-main {
+  padding-right: 21px;
+}
+
+
+.setting-main .tab-content .folder-main .folder-main-item .folder-item .folder-inner {
+  text-align: center;
+  margin-right: 40px;
+}
+
+
+.setting-main .folder-main-project {
+  padding: 40px 35px 0 35px;
+}
+
+.setting-main .my-walet-two {
+  width: 100%;
+}
+
+.setting-main .quick-transfr {
+  width: 100%;
+}
+
+.setting-main .bb-top {
+  padding: 42px 0 0 0;
+}
+
+.setting-main .my-walet-two .my-walet-two-slick {
+  border-right: 4px solid transparent;
+  padding-right: 0;
+}
+
+
+.setting-main .my-walet-two .my-walet-two-head .my-walet-two-text h3 {
+  font-size: 14px;
+}
+
+.quick-transfr-head{
+  margin-top: 30px;
+}
+
+.payment-item-two{
+  margin-top: 40px;
+}
+
+
+.revenue-item .revenue-inner {
+  display: block;
+  text-align: center;
+}
+
+.revenue-item .revenue-inner .revenue-inner-df {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.revenue-item .revenue-item-btn .btn {
+  width: 50%;
+  text-align: center;
+}
+
+
+
+.nftmax-header__inner .header-right .icon-item .icon ul li ul li .notification .gift-item .gift-inner::before {
+display: none;
+}
+
+
+.nftmax-header__inner .header-right .profile ul {
+    left: -238px;
+}
+
+.nftmax-header__inner .header-right .icon-item .icon ul li ul li {
+    width: 300px;
+}
+
+
+.nftmax-header__inner .header-right .icon-item .icon ul li ul {
+  left: -204px;
+
+}
+
+.nftmax-header__inner .header-right .icon-item .icon ul .notification-dropdown{
+  position: absolute;
+  left: -80px;
+}
+.nftmax-header__inner .header-right .icon-item .icon ul .massage-dropdown{
+  position: absolute;
+  left: -138px;
+}
+
+.efficiency-item-res{
+  margin-top: 20px;
+}
+
+
+.ql-toolbar.ql-snow .ql-formats {
+  margin-right: 0;
+}
+
+.massage-main-box{
+  margin-top: 50px;
+}
+
+.withdraw-item {
+  margin-bottom: 20px;
+}
+
+.modal-body .modal-print-box ul li .text-2 {
+  font-size: 18px;
+}
+
+.modal-body .modal-print-box ul li .text-1 {
+  font-size: 18px;
+}
+
+.modal-body .modal-print-box-two ul li .text-1 {
+  font-size: 18px;
+}
+
+.modal-body .modal-print-box-two ul li .text-2 {
+  font-size: 18px;
+}
+
+.setting-main .tab-content {
+margin-top: 20px;
+}
+
+
+.setting-main .tab-content {
+  padding: 32px 20px 65PX 20px;
+}
+
+
+.up-date-profile{
+  text-align: center;
+}
+
+
+.setting-main .tab-content .up-date-profile-main .up-date-profile-img .up-date-profile-img-btn {
+  position: absolute;
+  right: 73px;
+}
+
+
+.setting-main .tab-content .notification-main .notification-item .notification-inner .notification-inner-text span {
+  display: none;
+}
+
+
+.setting-main .tab-content .folder-main .folder-main-item .folder-item .folder-inner {
+  text-align: center;
+  margin-right: 12px;
+}
+
+.folder-main-item-two{
+  display: none;
+}
+
+
+.setting-main .quick-transfr .quick-trandfr-btn .btn .btn-text-two {
+  margin-left: 56px;
+}
+
+.col-pr-40px {
+  padding-right: 0;
+}
+
+.modal-wallet-item-from-main .modal-wallet-item-from .modal-wallet-item-from-inner .form-label {
+  font-size: 14px;
+}
+
+.modal-wallet-item .modal-wallet-item-inner .modal-wallet-item-inner-text-two {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.modal-wallet-item .modal-wallet-item-inner {
+  display: flex;
+  gap: 18px;
+}
+
+.modal-wallet-tabel .modal-wallet-tabel-item .tabel-inner-item {
+  gap: 22px;
+}
+
+.modal-wallet-tabel .modal-wallet-tabel-item {
+  gap: 18px;
+}
+
+.setting-main .my-walet-two .my-walet-two-head {
+  gap: 172px;
+}
+
+
+.setting-main .password-img {
+  margin-top: 50px;
+}
+
+.sign-up-top {
+  display: block;
+}
+
+
+.sign-up-top .sign-up-main {
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 130px;
+  padding-bottom: 76px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sign-up-top .sign-up-main .sign-up-top-btn a {
+  font-size: 10px;
+
+}
+
+.sign-up-top .sign-up-main .sign-up-from .sign-up-from-item .sign-up-btn-btm {
+  margin-top: 30px;
+}
+
+.sign-up-main-two{
+  display: none;
+}
+
+
+
+#world-map {
+  width: 100% !important;
+  height: 100%;
+  margin-top: 30px;
+}
+
+
+.most-locations .most-locations-inner-item {
+  display: block;
+  justify-content: space-between;
+}
+
+
+.most-locations .most-location-item .most-locations-text h2 {
+  font-size: 18px;
+}
+
+.support-ticket-btn-box {
+  display: none;
+}
+
+.support-btn-item {
+  margin-top: 20px;
+}
+
+
+.recent-support-main-box .recent-support-item .recent-support-item-inner {
+  display: block;
+  gap: 24px;
+  text-align: center;
+}
+
+.recent-support-main-box .recent-support-item .recent-support-item-inner-icon {
+  justify-content: center;
+}
+
+.recent-support-main-box .recent-support-text h2 {
+  text-align: center;
+}
+
+.support-ticket-main .from .mt-24px {
+  margin-top: 0px;
+}
+
+.support-ticket-main .from .form-control {
+ margin-bottom: 20px;
+}
+
+.col-ml-45px {
+  padding-left: 0;
+  margin-top: 30px;
+}
+
+
+.user-tabel-heading{
+  display: none;
+}
+
+.tabel-main-two .bg-green {
+ display: none;
+}
+
+.tabel-main-two .bg-red {
+  display: none;
+}
+
+.tabel-main-two .bg-yellow {
+  display: none;
+}
+
+.user-details-item-box .user-details-text h6 {
+  padding: 0 0;
+}
+
+.user-details-item-box {
+  margin: 80px 0 0 0;
+}
+
+
+.fc-toolbar-chunk h2 {
+  font-size: 0px;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 14px;
+  padding-bottom: 28px;
+}
+
+
+.fc-header-toolbar-two {
+  top: 20px;
+}
+
+
+.coming-soon .coming-soon-item .coming-soon-inner {
+  padding: 20px 14px 10px;
+
+}
+
+.coming-soon .coming-soon-item {
+  font-size: 30px;
+  justify-content: center;
+}
+.coming-soon {
+  padding: 0 0;
+  height: 100%;
+}  
+
+.coming-soon .coming-soon-head h2 {
+  font-size: 28px;
+}
+
+
+.coming-soon .coming-soon-head p {
+  padding-top: 4px;
+}
+
+
+.nftmax-adashboard {
+  display: block;
+}
+
+.nftmax-adashboard .nftmax-adashboard-right {
+  width: 100%;
+}
+
+}
