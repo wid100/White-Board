@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-
 use App\Models\Category;
+
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
@@ -16,7 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::orderBy('created_at', 'asc')->get();
+        return view('admin.category.index', compact('categories'));
     }
 
     /**
@@ -26,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
@@ -37,7 +39,19 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+
+        $category = new Category();
+        $category->author = Auth::user()->id;
+        $category->name = $validatedData['name'];
+        $category->description = $validatedData['description'] ?? null;
+        $category->status = $request->has('status');
+        $category->save();
+
+        return redirect()->route('admin.category.index')->with('success', 'Category created successfully.');
     }
 
     /**
@@ -59,7 +73,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -71,7 +85,18 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+
+        $category->name = $validatedData['name'];
+        $category->description = $validatedData['description'] ?? null;
+        $status = $request->has('status') ? true : false;
+        $category->status = $status;
+        $category->save();
+
+        return redirect()->route('admin.category.index')->with('success', 'Category updated successfully.');
     }
 
     /**
@@ -82,6 +107,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->route('admin.category.index')->with('success', 'Category deleted successfully.');
     }
 }
