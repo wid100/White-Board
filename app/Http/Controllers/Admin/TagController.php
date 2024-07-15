@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-
 use App\Models\Tag;
+
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class TagController extends Controller
 {
@@ -16,7 +17,8 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        $tags = Tag::orderBy('created_at', 'asc')->get();
+        return view('admin.tag.index', compact('tags'));
     }
 
     /**
@@ -26,7 +28,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tag.create');
     }
 
     /**
@@ -37,9 +39,20 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
 
+        $tag = new Tag();
+        $tag->author = Auth::user()->id;
+        $tag->name = $validatedData['name'];
+        $tag->description = $validatedData['description'] ?? null;
+        $tag->status = $request->has('status');
+        $tag->save();
+
+        return redirect()->route('admin.tag.index')->with('success', 'Tag created successfully.');
+    }
     /**
      * Display the specified resource.
      *
@@ -59,7 +72,8 @@ class TagController extends Controller
      */
     public function edit(Tag $tag)
     {
-        //
+
+        return view('admin.tag.edit', compact('tag'));
     }
 
     /**
@@ -71,8 +85,20 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+
+        $tag->name = $validatedData['name'];
+        $tag->description = $validatedData['description'] ?? null;
+        $status = $request->has('status') ? true : false;
+        $tag->status = $status;
+        $tag->save();
+
+        return redirect()->route('admin.tag.index')->with('success', 'Tag updated successfully.');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -82,6 +108,8 @@ class TagController extends Controller
      */
     public function destroy(Tag $tag)
     {
-        //
+        $tag->delete();
+
+        return redirect()->route('admin.tag.index')->with('success', 'Tag deleted successfully.');
     }
 }

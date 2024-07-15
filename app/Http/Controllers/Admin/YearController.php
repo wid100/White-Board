@@ -15,8 +15,10 @@ class YearController extends Controller
      */
     public function index()
     {
-        //
+        $years = Year::orderBy('year', 'asc')->get();
+        return view('admin.year.index', compact('years'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -25,7 +27,7 @@ class YearController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.year.create');
     }
 
     /**
@@ -36,7 +38,16 @@ class YearController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'year' => 'required|string|max:255',
+        ]);
+
+        $year = new Year();
+        $year->year = $validatedData['year'];
+        $status = $request->has('status') ? true : false;
+        $year->status = $status;
+        $year->save();
+        return redirect()->route('admin.year.index')->with('success', 'Year Create successfully.');
     }
 
     /**
@@ -56,9 +67,10 @@ class YearController extends Controller
      * @param  \App\Models\Year  $year
      * @return \Illuminate\Http\Response
      */
-    public function edit(Year $year)
+    public function edit($id)
     {
-        //
+        $year = Year::find($id);
+        return view('admin.year.edit', compact('year'));
     }
 
     /**
@@ -70,7 +82,18 @@ class YearController extends Controller
      */
     public function update(Request $request, Year $year)
     {
-        //
+        $validatedData = $request->validate([
+            'year' => 'required|string|max:255',
+        ]);
+
+        $year->year = $validatedData['year'];
+
+        $status = $request->has('status') ? true : false;
+        $year->status = $status;
+
+        $year->save();
+
+        return redirect()->route('admin.year.index')->with('success', 'Year Update successfully.');
     }
 
     /**
@@ -81,6 +104,7 @@ class YearController extends Controller
      */
     public function destroy(Year $year)
     {
-        //
+        $year->delete();
+        return redirect()->route('admin.year.index')->with('success', 'Year deleted successfully.');
     }
 }
