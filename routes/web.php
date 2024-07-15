@@ -5,6 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\User\DashboardController as UserDashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\YearController;
+use App\Http\Controllers\Admin\IssueController;
+use App\Http\Controllers\Admin\EditornoteController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\TagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +31,13 @@ Auth::routes();
 Route::namespace('App\Http\Controllers')->group(function () {
     Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+
+        Route::resource('/year', YearController::class);
+        Route::resource('/issue', IssueController::class);
+        Route::resource('/editornote', EditornoteController::class);
+        Route::resource('/post', PostController::class);
+        Route::resource('/category', CategoryController::class);
+        Route::resource('/tag', TagController::class);
     });
 });
 
