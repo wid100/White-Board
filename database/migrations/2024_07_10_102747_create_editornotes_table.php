@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->text('description');
             $table->string('creator');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

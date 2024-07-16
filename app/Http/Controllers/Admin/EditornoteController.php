@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 
 use App\Models\Editornote;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class EditornoteController extends Controller
 {
@@ -16,7 +18,8 @@ class EditornoteController extends Controller
      */
     public function index()
     {
-        //
+        $editornots = Editornote::all();
+        return view('admin.editornote.index', compact('editornots'));
     }
 
     /**
@@ -26,8 +29,10 @@ class EditornoteController extends Controller
      */
     public function create()
     {
-        //
+        $editors = User::where('role_id', 5)->get();
+        return view('admin.editornote.create', compact('editors'));
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -37,7 +42,23 @@ class EditornoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'user_id' => 'required',
+            'form_editor' => 'required',
+            'title' => 'required',
+            'description' => 'nullable|string',
+        ]);
+
+        $editornote = new Editornote();
+        $editornote->creator = Auth::user()->id;
+        $editornote->user_id = $validatedData['user_id'];
+        $editornote->form_editor = $validatedData['form_editor'];
+        $editornote->title = $validatedData['title'];
+        $editornote->description = $validatedData['description'] ?? null;
+        $editornote->status = $request->has('status');
+        $editornote->save();
+
+        return redirect()->route('admin.editornote.index')->with('success', 'Editor Note created successfully.');
     }
 
     /**
@@ -57,9 +78,11 @@ class EditornoteController extends Controller
      * @param  \App\Models\Editornote  $editornote
      * @return \Illuminate\Http\Response
      */
-    public function edit(Editornote $editornote)
+    public function edit($id)
     {
-        //
+        $editornote = Editornote::findOrFail($id);
+        $editors = User::where('role_id', 5)->get();
+        return view('admin.editornote.edit', compact('editornote', 'editors'));
     }
 
     /**
@@ -69,9 +92,26 @@ class EditornoteController extends Controller
      * @param  \App\Models\Editornote  $editornote
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Editornote $editornote)
+    public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'form_editor' => 'required|string|max:255',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+
+        $editornote = Editornote::findOrFail($id);
+        $editornote->creator = Auth::user()->id;
+        $editornote->user_id = $validatedData['user_id'];
+        $editornote->form_editor = $validatedData['form_editor'];
+        $editornote->title = $validatedData['title'];
+        $editornote->description = $validatedData['description'];
+        $status = $request->has('status') ? true : false;
+        $editornote->status = $status;
+        $editornote->save();
+
+        return redirect()->route('admin.editornote.index')->with('success', 'Editor Note updated successfully.');
     }
 
     /**
@@ -80,8 +120,11 @@ class EditornoteController extends Controller
      * @param  \App\Models\Editornote  $editornote
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Editornote $editornote)
+    public function destroy($id)
     {
-        //
+        $editornote = Editornote::findOrFail($id);
+        $editornote->delete();
+
+        return redirect()->route('admin.editornote.index')->with('success', 'Editor Note deleted successfully.');
     }
 }
