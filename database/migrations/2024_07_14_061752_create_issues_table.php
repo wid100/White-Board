@@ -17,14 +17,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('year_id')->constrained()->onDelete('cascade');
             $table->foreignId('editornote_id')->constrained()->onDelete('cascade');
-            $table->string('image');
-            $table->string('issue_number');
+            $table->string('issue_number')->uniqid();
             $table->string('issue_month');
             $table->string('name');
+            $table->string('slug');
+            $table->string('image');
             $table->string('editorial_note');
-
-
-
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

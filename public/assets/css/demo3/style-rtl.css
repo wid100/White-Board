@@ -2781,7 +2781,6 @@ textarea.is-valid.typeahead.tt-hint, .select2-container--default .select2-search
 }
 
 .invalid-feedback {
-  display: none;
   width: 100%;
   margin-top: 0.25rem;
   font-size: 0.875em;
@@ -21456,7 +21455,7 @@ div.apexcharts-canvas .apexcharts-yaxistooltip-right:after {
   border-right-color: rgba(255, 255, 255, 0.8);
 }
 div.apexcharts-canvas .apexcharts-tooltip-marker {
-  margin-right: 0; 
+  margin-right: 0;
   margin-left: 10px
 }
 

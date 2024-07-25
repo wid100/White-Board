@@ -8,4 +8,28 @@ use Illuminate\Database\Eloquent\Model;
 class Issue extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'year_id',
+        'editornote_id',
+        'slug',
+        'image',
+        'issue_number',
+        'issue_month',
+        'name',
+        'editorial_note',
+        'status',
+    ];
+
+
+    public function year()
+    {
+        return $this->belongsTo(Year::class);
+    }
+
+
+    public function month()
+    {
+        return $this->belongsTo(Month::class, 'issue_month', 'id');
+    }
 }

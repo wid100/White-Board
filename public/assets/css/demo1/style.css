@@ -2783,7 +2783,6 @@ textarea.is-valid.typeahead.tt-hint, .select2-container--default .select2-search
 }
 
 .invalid-feedback {
-  display: none;
   width: 100%;
   margin-top: 0.25rem;
   font-size: 0.875em;
@@ -21692,8 +21691,8 @@ div.apexcharts-canvas .apexcharts-yaxistooltip-right:after {
 }
 div.apexcharts-canvas .apexcharts-tooltip-marker {
   /*rtl:raw:
-  margin-right: 0; 
-  margin-left: 10px; 
+  margin-right: 0;
+  margin-left: 10px;
   */
 }
 
@@ -22413,7 +22412,7 @@ div.tox .tox-dialog__body {
 
 .wizard > .actions {
   /*rtl:raw:
-    text-align: left; 
+    text-align: left;
   */
 }
 
