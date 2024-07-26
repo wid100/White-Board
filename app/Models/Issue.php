@@ -32,4 +32,10 @@ class Issue extends Model
     {
         return $this->belongsTo(Month::class, 'issue_month', 'id');
     }
+
+    // Define the inverse relationship with Post
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

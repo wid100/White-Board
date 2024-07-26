@@ -7,6 +7,7 @@
   <!-- Plugin js for this page -->
   <script src="{{ asset('assets/vendors/flatpickr/flatpickr.min.js') }}"></script>
   <script src="{{ asset('assets/vendors/apexcharts/apexcharts.min.js') }}"></script>
+  <script src="{{ asset('assets/vendors/jquery-tags-input/jquery.tagsinput.min.js') }}"></script>
   <!-- End plugin js for this page -->
 
   <!-- inject:js -->
@@ -138,4 +139,22 @@
           output.src = URL.createObjectURL(event.target.files[0]);
           output.style.display = 'block';
       }
+  </script>
+
+  <script>
+      $(function() {
+          'use strict';
+
+          $('#tags').tagsInput({
+              'width': '100%',
+              'height': '75%',
+              'interactive': true,
+              'defaultText': 'Add More',
+              'removeWithBackspace': true,
+              'minChars': 0,
+              'maxChars': 20,
+              'placeholderColor': '#666666'
+          });
+
+      });
   </script>

@@ -23,10 +23,14 @@ return new class extends Migration
             $table->string('post_type');
             $table->string('author_id');
             $table->string('post_date');
+            $table->string('image');
             $table->longText('description');
             $table->boolean('status')->default(true);
 
-
+            // seo column
+            $table->string('meta_title');
+            $table->json('meta_tag');
+            $table->string('meta_description');
 
             $table->timestamps();
         });

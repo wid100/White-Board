@@ -14,4 +14,9 @@ class Tag extends Model
     {
         return $this->belongsTo(User::class, 'author');
     }
+    // Define the inverse relationship with Post
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

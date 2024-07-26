@@ -51,6 +51,12 @@
                     <span class="link-title">Issue</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('admin.post.index') }}" class="nav-link">
+                    <i class="link-icon" data-feather="box"></i>
+                    <span class="link-title">Posts</span>
+                </a>
+            </li>
 
             <li class="nav-item nav-category">web apps</li>
             <li class="nav-item">
