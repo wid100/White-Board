@@ -8,9 +8,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\YearController;
 use App\Http\Controllers\Admin\IssueController;
 use App\Http\Controllers\Admin\EditornoteController;
+use App\Http\Controllers\Admin\HomeSettingController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\PolicyStreamController;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -58,8 +60,10 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::resource('/issue', IssueController::class);
         Route::resource('/editornote', EditornoteController::class);
         Route::resource('/post', PostController::class);
+        Route::resource('/policy/stream', PolicyStreamController::class);
         Route::resource('/category', CategoryController::class);
         Route::resource('/tag', TagController::class);
+        Route::resource('/home/setting', HomeSettingController::class);
     });
 });
 

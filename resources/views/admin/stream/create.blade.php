@@ -6,7 +6,7 @@
         <nav class="page-breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Forms</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Create Post</li>
+                <li class="breadcrumb-item active" aria-current="page">Create Policy Stream</li>
             </ol>
         </nav>
 
@@ -14,9 +14,9 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Create Post</h4>
+                        <h4 class="card-title">Create Policy Stream</h4>
 
-                        <form action="{{ route('admin.post.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.stream.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <!-- Meta Title -->
@@ -63,7 +63,7 @@
 
                             <br><br>
 
-                            <h4 class="card-title">Post Information</h4>
+                            <h4 class="card-title">Policy Stream Information</h4>
 
                             <div class="row">
                                 <!-- Title -->
@@ -80,7 +80,7 @@
                                 </div>
 
                                 <!-- Post Type -->
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <div class="mb-3">
                                         <label for="post_type" class="form-label">Post Type <span
                                                 class="text-danger">*</span></label>
@@ -93,7 +93,7 @@
                                 </div>
 
                                 <!-- Author (Select Writer) -->
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <div class="mb-3">
                                         <label for="author_id" class="form-label">Select Writer <span
                                                 class="text-danger">*</span></label>
@@ -113,31 +113,10 @@
                                     </div>
                                 </div>
 
-                                <!-- Issue -->
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="issue_id" class="form-label">Issue <span
-                                                class="text-danger">*</span></label>
-                                        <select id="issue_id" name="issue_id"
-                                            class="js-example-basic-multiple form-select @error('issue_id') is-invalid @enderror">
-                                            <option value="">Select Issue</option>
-                                            @foreach ($issues as $issue)
-                                                <option value="{{ $issue->id }}"
-                                                    {{ old('issue_id') == $issue->id ? 'selected' : '' }}>
-                                                    {{ $issue->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                        @error('issue_id')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
-
                                 <!-- Category -->
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="category_id" class="form-label"> Category <span
+                                        <label for="category_id" class="form-label">Category <span
                                                 class="text-danger">*</span></label>
                                         <select id="category_id" name="category_id"
                                             class="js-example-basic-multiple form-select @error('category_id') is-invalid @enderror">
@@ -195,8 +174,8 @@
                                     <div class="mb-3">
                                         <label for="description" class="form-label">Description <span
                                                 class="text-danger">*</span></label>
-                                        <textarea id="open-source-plugins" name="description"
-                                            class="form-control @error('description') is-invalid @enderror" cols="30" rows="5">{{ old('description') }}</textarea>
+                                        <textarea id="open-source-plugins" name="description" class="form-control @error('description') is-invalid @enderror"
+                                            cols="30" rows="5">{{ old('description') }}</textarea>
                                         @error('description')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror

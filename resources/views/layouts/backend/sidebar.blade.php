@@ -52,31 +52,33 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{ route('admin.stream.index') }}" class="nav-link">
+                    <i class="link-icon" data-feather="book"></i>
+                    <span class="link-title">Policy Stream</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a href="{{ route('admin.post.index') }}" class="nav-link">
-                    <i class="link-icon" data-feather="box"></i>
+                    <i class="link-icon" data-feather="book"></i>
                     <span class="link-title">Posts</span>
                 </a>
             </li>
 
             <li class="nav-item nav-category">web apps</li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false"
-                    aria-controls="emails">
-                    <i class="link-icon" data-feather="mail"></i>
-                    <span class="link-title">Email</span>
+                <a class="nav-link" data-bs-toggle="collapse" href="#setting" role="button" aria-expanded="false"
+                    aria-controls="setting">
+                    <i class="link-icon" data-feather="settings"></i>
+                    <span class="link-title">Setting</span>
                     <i class="link-arrow" data-feather="chevron-down"></i>
                 </a>
-                <div class="collapse" id="emails">
+                <div class="collapse" id="setting">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
-                            <a href="pages/email/inbox.html" class="nav-link">Inbox</a>
+                            <a href="{{ route('admin.setting.index') }}" class="nav-link">Home Setting</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/email/read.html" class="nav-link">Read</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/email/compose.html" class="nav-link">Compose</a>
-                        </li>
+
                     </ul>
                 </div>
             </li>
