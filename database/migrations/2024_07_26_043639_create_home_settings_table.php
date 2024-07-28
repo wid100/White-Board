@@ -21,12 +21,10 @@ return new class extends Migration
             $table->json('spotlight_second')->nullable();
             $table->json('policy_stream')->nullable();
             $table->json('trending')->nullable();
-            $table->json('ailored_for_policymakers')->nullable();
+            $table->json('tailored_for_policymakers')->nullable();
             $table->string('latest_issue')->nullable();
             $table->json('latest_issue_post')->nullable();
             $table->json('latest_category')->nullable();
-
-
 
             $table->timestamps();
         });

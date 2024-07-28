@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Support\Str;
+use App\Models\Post;
 
 use App\Models\Year;
 use App\Models\Issue;
 use App\Models\Month;
 use App\Models\Editornote;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -24,6 +25,15 @@ class IssueController extends Controller
         return view('admin.issue.index', compact('issues'));
     }
 
+
+
+    public function getPosts($id)
+    {
+        $issue = Issue::findOrFail($id);
+        $posts = Post::where('issue_id', $issue->id)->get();
+
+        return response()->json($posts);
+    }
     /**
      * Show the form for creating a new resource.
      *

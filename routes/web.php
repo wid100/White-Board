@@ -64,6 +64,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::resource('/category', CategoryController::class);
         Route::resource('/tag', TagController::class);
         Route::resource('/home/setting', HomeSettingController::class);
+        Route::get('/issue/{id}/posts', [IssueController::class, 'getPosts'])->name('issue.posts');
     });
 });
 

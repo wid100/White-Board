@@ -76,7 +76,7 @@
                 <div class="collapse" id="setting">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
-                            <a href="{{ route('admin.setting.index') }}" class="nav-link">Home Setting</a>
+                            <a href="{{ route('admin.setting.edit', 1) }}" class="nav-link">Home Setting</a>
                         </li>
 
                     </ul>
