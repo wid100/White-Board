@@ -1,0 +1,282 @@
+/* ===========================default css ============== */
+/* ====Alegreya Sans  */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap");
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("{{ asset('../fonts/SegoeUI.ttf') }}") format("truetype"); /* 'truetype' for TTF */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ivar Soft TRIAL";
+  src: url("{{ asset('../fonts/IvarSoftTRIAL-Regular.otf') }}") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ivar Soft TRIAL";
+  src: url("{{ asset('../fonts/IvarSoftTRIAL-Medium.otf') }}") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ivar Soft TRIAL";
+  src: url("{{ asset('../fonts/IvarSoftTRIAL-SemiBold.otf') }}") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ivar Soft TRIAL";
+  src: url("{{ asset('../fonts/IvarSoftTRIAL-Bold.otf') }}") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Source Sans Pro */
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("{{ asset('../fonts/SourceSansPro-ExtraLight.otf') }}") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("{{ asset('../fonts/SourceSansPro-Light.otf') }}") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("{{ asset('../fonts/SourceSansPro-Regular.otf') }}") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("{{ asset('../fonts/SourceSansPro-Semibold.otf') }}") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("{{ asset('../fonts/SourceSansPro-Bold.otf') }}") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Abril Fatface */
+@font-face {
+  font-family: "Abril Fatface";
+  src: url("{{ asset('../fonts/AbrilFatface-Regular.ttf') }}") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Encode Sans */
+@font-face {
+  font-family: "Encode Sans";
+  src: url("{{ asset('../fonts/EncodeSansCondensed-ExtraLight.ttf') }}") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Encode Sans";
+  src: url("{{ asset('../fonts/EncodeSansCondensed-Light.ttf') }}") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Encode Sans";
+  src: url("{{ asset('../fonts/EncodeSansCondensed-Regular.ttf') }}") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Encode Sans";
+  src: url("{{ asset('../fonts/EncodeSansCondensed-Medium.ttf') }}") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Encode Sans";
+  src: url("{{ asset('../fonts/EncodeSansCondensed-SemiBold.ttf') }}") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Mada */
+@font-face {
+  font-family: "Mada";
+  src: url("{{ asset('../fonts/Mada-Regular.ttf') }}") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+/*===== VARIABLES CSS =====*/
+
+:root {
+  /*========== Colors ==========*/
+  --main-color: #c3361c;
+  --second-color: #187FAC;
+  --black-color: #000000;
+  --text-color: #000000;
+  --title-color: #162148;
+  --white-color: #ffffff;
+  --text-alt: #787878;
+  /* ======== Font ========== */
+  --body-font: "Alegreya Sans";
+  --primary-font: "Ivar Soft TRIAL";
+  --secondary-font: "Source Sans Pro";
+  /*========== Font and typography ==========*/
+  --sec-title-font: 25px;
+  --p-font: 16px;
+  --m-title: 20px;
+  --l-title: 25px;
+  --p-font-height: 25px;
+  --lp-font-height: 27px;
+  --title-font: 40px;
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  /*========== Margin ==========*/
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* ==================CSS Variable END========= */
+
+/*========== BASE ==========*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-color);
+  font-size: var(--p-font);
+  font-weight: 400;
+  font-family: var(--body-font);
+  line-height: var(--p-font-height);
+  overflow-x: hidden;
+}
+
+img {
+  vertical-align: middle;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* ============================GENERAL STYLE END======= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+span,
+label {
+  margin: 0;
+}
+
+.ovh {
+  overflow: hidden;
+}
+
+table.table {
+  white-space: nowrap;
+}
+
+.custom-btn {
+  background: var(--main-color);
+  padding: 5px 7px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: var(--white-color);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  font-family: var(--secondary-font);
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  width: 100%;
+  line-height: normal;
+  border: 1px solid var(--main-color);
+  font-weight: 600;
+  text-align: center;
+}
+
+.custom-btn:hover {
+  background: none;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+
+.btn:focus {
+  outline: 0px;
+  box-shadow: none;
+}
+
+.my-6 {
+  margin: 40px 0;
+}
+
+.body-wrapper {
+  max-width: 1360px;
+  margin: auto;
+}
+
+/* =======================default css end =================== */

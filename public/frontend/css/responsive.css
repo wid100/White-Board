@@ -1,0 +1,718 @@
+@media only screen and (max-width: 1200px) {
+  .explore-wrapper {
+    grid-template-columns: 100%;
+    gap: 20px;
+  }
+  .shortlight-item-two .shortlight-img img {
+    width: 100%;
+  }
+  .people-First-texts {
+    overflow-x: auto;
+  }
+  .people-search-item {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .people-wrapper {
+    width: 100%;
+  }
+  .people-search-item input {
+    width: 100%;
+  }
+  section.people-page {
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+  .people-First-text-content {
+    padding-top: 60px;
+  }
+  .about-us-wrapper {
+    width: 100%;
+  }
+  .writer-header {
+    width: 100%;
+  }
+  .blog-details-content-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  .blog-social-media {
+    position: initial;
+    display: none;
+  }
+  .blog-issue-send {
+    display: none;
+  }
+  .issue-copes-title .send-link-btn span {
+    font-size: 17px;
+  }
+  .issue-copes-title h4 {
+    font-size: 16px;
+  }
+  .issue-copes-title .send-link-btn {
+    font-size: 17px;
+  }
+  .choose-subcription-right {
+    display: none;
+  }
+  section.choose-subscription {
+    padding: 50px 0px 60px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .about-sidebar {
+    display: none;
+  }
+  .about-us-wrapper {
+    grid-template-columns: 100%;
+  }
+  .about-us {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+  .writer-header .issue-writter-item {
+    flex-direction: column;
+  }
+  section.writer-header {
+    padding-top: 49px;
+  }
+  section.writer-list {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .writer-issue-lists .blog-card-item {
+    flex-direction: column;
+  }
+  .writer-issue-lists .blog-card-item a.blog-img {
+    width: 100%;
+  }
+  .writer-issue-lists .blog-card-item a.blog-img img {
+    width: 100%;
+  }
+  .writer-issue-lists .blog-card-content {
+    padding-right: 0px;
+    top: 0px;
+  }
+
+  .writer-issue-lists .blog-card-item:nth-last-child(1) {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .hero {
+    padding: 30px 0px 30px;
+  }
+  .hero-img {
+    margin-bottom: 30px;
+  }
+  .hero-content-right {
+    margin-top: 20px;
+  }
+  .hero-content-left {
+    text-align: start;
+    align-items: flex-start;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 20px;
+  }
+  .hero-content-right {
+    padding-left: 0px;
+    border-left: none;
+  }
+  .hero-wrapper {
+    border-bottom: none;
+    padding-bottom: 0px;
+  }
+  .blog-details-title {
+    width: 100%;
+  }
+  .blog-details-title h1 {
+    font-size: 30px;
+    line-height: 140%;
+  }
+  .blog-details-title p {
+    font-size: 18px;
+  }
+  p.blog-issue-owner {
+    margin-top: 40px;
+  }
+  .blog-writer-list {
+    width: 100%;
+  }
+  .blog-details-content {
+    width: 100%;
+  }
+  .blog-all-text {
+    height: auto;
+  }
+  .issue-writter-item {
+    flex-direction: column;
+  }
+  .issue-copes-title {
+    gap: 15px;
+    border-radius: 19px;
+    flex-direction: column;
+    align-items: start;
+  }
+  .blog-details-header {
+    padding-top: 40px;
+  }
+  .news-letter-list-left .writer-issue-lists .blog-card-item a.blog-img img {
+    width: 100%;
+  }
+  .news-letter-list-right {
+    padding-top: 50px;
+  }
+  .news-sign-up {
+    margin-bottom: 45px;
+    padding: 40px;
+    flex-direction: column;
+    gap: 35px;
+  }
+  section.news-letter-page {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .issue-list-wrapper {
+    width: 100%;
+  }
+  .issue-filter-wrapper {
+    width: 100%;
+  }
+
+  .slider-content-center {
+    margin-top: 25px;
+  }
+  .shortlight-img {
+    width: 100%;
+  }
+  .shortlight-card {
+    flex-direction: column;
+  }
+  .shortlight-img img {
+    width: 100%;
+  }
+  .industry-card {
+    padding: 20px 20px 20px 20px;
+    border-right: none;
+    border-bottom: 3px solid #fff;
+  }
+  .explore-left p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .explore-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 20px;
+  }
+
+  .recent-issue-wrapper {
+    width: 100%;
+    margin: auto;
+  }
+  section.recent-issue {
+    padding: 50px 0px;
+  }
+  .recent-img {
+    width: 100%;
+  }
+  .recent-issue-items {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  section.thoughts-section {
+    background: none;
+    padding: 0px 0px 50px 0;
+  }
+  .thoughts-desktap {
+    display: none;
+  }
+  .thoughts-header {
+    border-bottom: none;
+  }
+  .accordion-item {
+    margin-bottom: 4px;
+  }
+  .thoughts-mobile {
+    display: block;
+  }
+  section.latest-issue {
+    margin-top: 40px;
+  }
+  .footer-category {
+    display: none;
+  }
+  section.footer {
+    padding: 50px 0px 117px;
+    position: relative;
+  }
+  ul.footer-link-list {
+    border-right: none;
+    border-bottom: 1px dotted rgba(90, 174, 200, 0.5);
+    padding-bottom: 25px;
+  }
+  .footer-btn-item {
+    border-right: none;
+    border-bottom: 1px dotted rgba(90, 174, 200, 0.5);
+    padding: 40px 0px;
+  }
+  .footer-social {
+    gap: 22px;
+    padding-top: 35px;
+  }
+  .blog-content-left {
+    padding-right: 0px;
+    border-right: none;
+  }
+  .thought-title-img img {
+    width: 335px;
+  }
+  .slider-content-center {
+    padding-left: 0px;
+    border-left: none;
+    border-top: 1px solid #bbb;
+    padding-top: 20px;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 20px;
+  }
+  .footer-header {
+    width: 100%;
+  }
+  #scroll-top {
+    position: absolute;
+    left: 30px;
+    bottom: 48px;
+    z-index: 999;
+  }
+  .form-input-con {
+    gap: 0px;
+    flex-direction: column;
+  }
+  .sign-up-con-btn {
+    align-items: start;
+    flex-direction: column;
+  }
+  .form-input-items {
+    padding: 90px 30px 80px;
+    width: 100%;
+  }
+  .issue-details-right {
+    padding: 0px 0px 0px;
+  }
+  .policy-bucket-wrapper {
+    width: 100%;
+    margin: auto;
+  }
+  section.policy-bucket {
+    padding-bottom: 60px;
+  }
+  .thoughts-header {
+    margin-bottom: 4px;
+  }
+  .thoughts-header h1 {
+    top: 7px;
+  }
+
+  ul.hero-editor-list li:nth-child(4) {
+    border-bottom: 1px solid #bbb;
+  }
+  .slider-wrapper {
+    border-bottom: none;
+    padding-bottom: 0px;
+  }
+  .shortlight-item {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  section.industry {
+    padding: 25px 0;
+  }
+  .industry-wrraper {
+    padding-left: 0px;
+  }
+  .blog-card-item {
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #bbb;
+  }
+  .blog-wrapper .trending-h-title {
+    padding-bottom: 25px;
+    border-top: none;
+    padding-top: 0px;
+  }
+  .trending-add {
+    padding-top: 25px;
+  }
+  .latest-issue-wrapper {
+    padding: 35px 0;
+  }
+  .latest-issue-item {
+    border-left: none;
+    margin-top: 30px;
+    padding-left: 0px;
+    border-top: 1px solid #fff;
+    padding-top: 30px;
+  }
+  .blog-card-content {
+    padding-top: 22px;
+    padding-right: 0px;
+  }
+  .latest-issue-item-left:nth-child(2) {
+    padding-top: 0;
+    border-top: none;
+    margin-top: 0;
+  }
+  .recent-issue-item:nth-child(5) {
+    display: none;
+  }
+  .footer-header {
+    padding-bottom: 40px;
+  }
+  .footer-wrapper {
+    padding: 0 20px;
+  }
+  button.footer-sign-up-btn {
+    width: 189px;
+  }
+  .footer-btn-item {
+    gap: 20px;
+  }
+
+  .form-input-items.sign-up-from-input {
+    padding: 30px 30px 40px 30px;
+  }
+  .sign-up-con-btn {
+    gap: 10px;
+  }
+  .model-form-wrapper {
+    margin: 5px;
+  }
+  .issue-filter-left {
+    flex-direction: column;
+    gap: 7px;
+    padding-bottom: 7px;
+  }
+  .issue-filter-nav {
+    grid-template-columns: 100%;
+    gap: 0;
+  }
+  .issue-filter-tap-content {
+    width: 100%;
+    padding-right: 0px;
+  }
+  .issue-filter-tap-item {
+    width: 100%;
+  }
+  .issue-filter-right {
+    background: var(--main-color);
+    padding: 10px 0;
+  }
+  .issue-filter-right button {
+    color: var(--white-color);
+  }
+  .issue-details-content {
+    margin-top: 0px;
+  }
+  .issue-list {
+    padding: 40px 0 0px 0;
+  }
+  section.issue-filter {
+    padding-top: 26px;
+  }
+  .issue-details-title {
+    margin-bottom: 30px;
+  }
+  .issue-details-title-item h1 {
+    font-size: 25px;
+  }
+  .issue-search-flied input {
+    padding: 10px 20px;
+  }
+  .hero-content-left p {
+    padding-right: 30px;
+  }
+
+  .issue-details .row {
+    flex-direction: column-reverse;
+  }
+  .issue-details-item {
+    margin-bottom: 0px;
+  }
+  .issue-details-left .blog-title a {
+    font-size: 20px;
+  }
+  .issue-filter-header {
+    padding-bottom: 30px;
+  }
+  .issue-filter-item .recent-issue-item {
+    padding-bottom: 30px;
+  }
+  .issue-filter-item {
+    padding-bottom: 0px;
+    margin-bottom: 30px;
+  }
+  .trending-right-site {
+    padding-left: 0px;
+  }
+  .issue-details-mobile-img {
+    display: block;
+  }
+  .issue-details-mobile-img img {
+    width: 100%;
+    box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.25);
+    border: 1px solid #cfcfcf;
+  }
+  .issue-details {
+    padding: 50px 0 0px 0;
+  }
+  .issue-feature-head {
+    margin-top: 40px;
+  }
+  .issue-details-item .issue-details-img {
+    display: none;
+  }
+  .issue-details-left {
+    border-top: none;
+  }
+  .policy-bucket-title {
+    padding: 0 0 35px 0px;
+    border-top: none;
+  }
+  .blog-card-item.latest-issue-item.latest-issue-item-left {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .latest-issue-item-left .blog-card-content {
+    padding-right: 0;
+    border-bottom: none;
+    padding-bottom: 0px;
+  }
+  .blog-card-content.blog-card-content-text {
+    padding-top: 0px;
+  }
+  .sign-up-from-input .form-input-item {
+    margin-bottom: 17px;
+  }
+  section.people-page {
+    padding-bottom: 60px;
+  }
+  .editorial-title {
+    padding-top: 40px;
+  }
+  ul.editorial-list-items li p {
+    padding-right: 0px;
+  }
+  .editorial-team-count {
+    flex-direction: column;
+  }
+  .editorial-team-count .editorial-team-item {
+    border-right: none;
+    border-bottom: 1px solid #bbb;
+    padding-right: 0px;
+    padding-bottom: 20px;
+    width: 100%;
+  }
+  .form-input-item.form-input-item-category {
+    width: 100%;
+  }
+  .form-input-file-card {
+    margin-bottom: 40px;
+  }
+  .advertise-item-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  .permission-lists ul li {
+    padding-bottom: 20px;
+  }
+  .permission-lists {
+    padding-top: 41px;
+  }
+  .people-member-item {
+    padding-bottom: 30px;
+  }
+  .people-img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+  }
+  .people-First-text-content {
+    padding-top: 40px;
+  }
+  .writer-issue-lists .blog-card-item {
+    margin-bottom: 35px;
+  }
+  .pagination-container {
+    padding: 0 15px;
+  }
+  .latest-blog-details-items {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  .news-letter-right-img-mobile {
+    display: block;
+    margin-bottom: 40px;
+  }
+  section.news-letter-list {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  .news-letter-right-img-mobile img {
+    width: 100%;
+  }
+  .choose-subcription-quarterly-items {
+    grid-template-columns: 1fr;
+  }
+  .choose-subcription-quarterly-item {
+    padding: 22px 24px 35px;
+    border-radius: 15px;
+    height: 183px;
+  }
+  .choose-subscription-wrapper {
+    width: 100%;
+  }
+  .choose-seleted-item {
+    width: 100%;
+  }
+  .choose-seleted-item select {
+    width: 100%;
+  }
+  .form-submit-btn .payment-btn {
+    width: 260px;
+    font-size: 18px;
+  }
+  button.custom-btn.send-me-btn.payment-btn {
+    gap: 30px;
+  }
+  .choose-subcription-header {
+    margin-bottom: 50px;
+  }
+  .drop_box {
+    padding: 30px 20px;
+    justify-content: space-between;
+    gap: 25px;
+    height: 100%;
+  }
+  .upload-file-text h2 {
+    font-size: 16px;
+  }
+  .uploadedSection{
+    margin-top: 30px;
+  }
+  .uploadedSection .drop_box {
+    flex-direction: column;
+    height: 100%;
+    gap: 30px;
+    width: 100%;
+    padding: 30px 20px;
+  }
+  .uploadedSection .drop_box .upload-file-text {
+    width: 100%;
+  }
+  .uploadedSection .drop_box .file-item {
+    width: 100%;
+  }
+  .news-letter-content {
+    padding-top: 50px;
+}
+.news-letter-content-text{
+  margin-bottom: 50px;
+}
+}
+@media only screen and (max-width: 550px) {
+  .explore-img img {
+    height: 194px;
+  }
+
+  .explore-content {
+    color: var(--white-color);
+    width: 170px;
+  }
+  .explore-left {
+    background: var(--main-color);
+    padding: 25px 30px;
+    border-radius: 20px;
+  }
+  .explore-right {
+    padding: 25px 30px;
+    border-radius: 20px;
+  }
+  .explore-left p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    width: 180px;
+    line-height: 20px;
+  }
+  .recent-issue-items {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .thoughts-header h1 {
+    position: absolute;
+    z-index: 1;
+    top: 7px;
+    left: 20px;
+    font-size: 23px;
+    color: var(--white-color);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  ul.issue-feature-list {
+    gap: 10px;
+  }
+  ul.issue-feature-list li {
+    padding-right: 10px;
+  }
+  .thought-title-img img {
+    width: 275px;
+  }
+  a.explore-link {
+    font-size: 22px;
+  }
+  .form-sign-up-text {
+    margin-top: 40px;
+    font-size: 19px;
+  }
+  .mySwiperWrapper .swiper-wrapper {
+    margin-left: 60px !important;
+  }
+  .row {
+    margin-right: calc(-0.5 * var(--bs-gutter-x)) !important;
+    margin-left: calc(-0.5 * var(--bs-gutter-x)) !important;
+  }
+  .row > * {
+    padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+    padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+  }
+  .personal-information-form h3 {
+    margin-bottom: 30px;
+  }
+  .personal-information-form .form-input-item {
+    margin-bottom: 25px;
+  }
+  .personal-information-form {
+    margin-bottom: 45px;
+  }
+  .news-adds1-img img {
+    width: 100%;
+  }
+  .choose-req-issue-item input {
+    width: 90px;
+  }
+  .choose-subcriptions .choose-subcription .choose-subcription-btn {
+    padding: 5px 17px;
+  }
+  .choose-subcriptions {
+    gap: 13px;
+  }
+  .choose-subcription-title h1 {
+    font-size: 24px;
+  }
+}
