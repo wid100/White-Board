@@ -23,7 +23,6 @@ class HomeSettingController extends Controller
     }
 
 
-
     public function edit($id)
     {
         $setting = HomeSetting::findOrFail($id);
@@ -33,21 +32,18 @@ class HomeSettingController extends Controller
         $latest_issues = Issue::all();
         $policy_streams = PolicyStream::all();
 
+        // Decode JSON from the database
+        $editorPickJson = json_decode($setting->editor_pick, true);
+        $editorPickIds = $editorPickJson ? json_decode($editorPickJson[0], true) : []; // Adjust based on actual structure
+
         // Get posts related to the current latest issue
         $latestIssuePosts = $setting->latest_issue ? Post::where('issue_id', $setting->latest_issue)->get() : collect();
 
-        return view('admin.setting.edit', compact('setting', 'allPosts', 'editor_picks', 'latest_categoris', 'latest_issues', 'policy_streams', 'latestIssuePosts'));
+        return view('admin.setting.edit', compact('setting', 'allPosts', 'editor_picks', 'latest_categoris', 'latest_issues', 'policy_streams', 'latestIssuePosts', 'editorPickIds'));
     }
 
 
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\HomeSetting  $homeSetting
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         // Validate the request
@@ -68,7 +64,7 @@ class HomeSettingController extends Controller
 
         // Update the attributes with the validated data
         $setting->spotlight = $request->input('spotlight');
-        $setting->editor_pick = json_encode($request->input('editor_pick'));
+        $setting->editor_pick = json_encode($request->input('editor_pick')); // Encode as plain JSON array
         $setting->spotlight_second = json_encode($request->input('spotlight_second'));
         $setting->policy_stream = json_encode($request->input('policy_stream'));
         $setting->trending = json_encode($request->input('trending'));

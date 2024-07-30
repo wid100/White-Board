@@ -140,14 +140,14 @@
 
                                         <div class="multi-select-wrapper">
                                             <div class="multi-select-box">
-                                                <!-- This input serves both as a placeholder and a search box -->
-                                                <input type="text" class="search-input" placeholder="Select cars...">
+                                                <input type="text" class="search-input"
+                                                    placeholder="Select editor picks...">
                                             </div>
                                             <div class="multi-select-options">
                                                 @foreach ($editor_picks as $editor_pick)
                                                     <label>
                                                         <input type="checkbox" value="{{ $editor_pick->id }}"
-                                                            {{ in_array($editor_pick->id, json_decode($setting->editor_pick, true) ?: []) ? 'checked' : '' }}>
+                                                            {{ in_array($editor_pick->id, $editorPickIds) ? 'checked' : '' }}>
                                                         <span>{{ $editor_pick->title }}</span>
                                                     </label>
                                                 @endforeach
@@ -157,6 +157,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <!-- Policy Stream -->
                                 <div class="col-md-6">
                                     <div class="mb-3">
@@ -344,12 +345,16 @@
                     });
 
                     $(wrapper).find('.search-input').attr('placeholder', selectedItems.length ? '' :
-                        'Select cars...');
+                        'Select editor picks...');
 
                     // Update hidden input with selected values
                     const selectedValues = selectedItems.map(item => item.value);
-                    $(wrapper).find('.hidden-editor-pick').val(selectedValues.join(','));
+                    $(wrapper).find('.hidden-editor-pick').val(JSON.stringify(
+                    selectedValues)); // Ensure correct JSON array
                 }
+
+
+
 
                 updateSelectedItems(); // Initialize tags
 
