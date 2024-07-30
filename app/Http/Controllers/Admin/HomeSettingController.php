@@ -50,6 +50,7 @@ class HomeSettingController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // Validate the request
         $request->validate([
             'spotlight' => 'required|string',
             'editor_pick' => 'required|array',
@@ -62,19 +63,24 @@ class HomeSettingController extends Controller
             'latest_category' => 'required|array',
         ]);
 
+        // Find the HomeSetting by ID
         $setting = HomeSetting::findOrFail($id);
-        $setting->spotlight = $request->spotlight;
-        $setting->editor_pick = json_encode($request->editor_pick);
-        $setting->spotlight_second = json_encode($request->spotlight_second);
-        $setting->policy_stream = json_encode($request->policy_stream);
-        $setting->trending = json_encode($request->trending);
-        $setting->tailored_for_policymakers = json_encode($request->tailored_for_policymakers);
-        $setting->latest_issue = $request->latest_issue;
-        $setting->latest_issue_post = json_encode($request->latest_issue_post);
-        $setting->latest_category = json_encode($request->latest_category);
 
+        // Update the attributes with the validated data
+        $setting->spotlight = $request->input('spotlight');
+        $setting->editor_pick = json_encode($request->input('editor_pick'));
+        $setting->spotlight_second = json_encode($request->input('spotlight_second'));
+        $setting->policy_stream = json_encode($request->input('policy_stream'));
+        $setting->trending = json_encode($request->input('trending'));
+        $setting->tailored_for_policymakers = json_encode($request->input('tailored_for_policymakers'));
+        $setting->latest_issue = $request->input('latest_issue');
+        $setting->latest_issue_post = json_encode($request->input('latest_issue_post'));
+        $setting->latest_category = json_encode($request->input('latest_category'));
+
+        // Save the updated settings
         $setting->save();
 
+        // Redirect with success message
         return redirect()->route('admin.setting.edit', $setting->id)->with('success', 'Settings updated successfully.');
     }
 }

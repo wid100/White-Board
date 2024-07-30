@@ -7,49 +7,38 @@
             <div class="hero-wrapper">
                 <div class="row">
                     <div class="col-md-12 col-lg-3 order-lg-1 order-2">
-                        <div class="hero-content-left">
-                            <h4>SPOTLIGHT</h4>
-                            <h1>Russia's Sberbank may open branch in Bangladesh</h1>
-                            <p>
-                                The answer to the title’s question is no. Let’s keep in mind
-                                that Bangladesh is the eighth most populous country in the
-                                world. It is also among the most densely populatedis the
-                                eighth mostis the eighth most...
-                            </p>
-                            <div class="more-btn">
-                                <a href="/blog-details.html">more
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
+                        @if ($spotlight)
+                            <div class="hero-content-left">
+                                <h4>SPOTLIGHT</h4>
+                                <h1>{!! Str::limit($spotlight->title, 40) !!}</h1>
+                                <p>
+                                    {!! Str::limit($spotlight->description, 100) !!}
+                                </p>
+                                <div class="more-btn">
+                                    <a href="{{ route('posts.show', $spotlight->slug) }}">more
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                        @endif
+
                     </div>
                     <div class="col-md-12 col-lg-6 order-lg-1 order-1">
                         <div class="hero-img">
-                            <img src="/assets/images/home/hero-img.png" alt="" />
+                            <img src="{{ asset($spotlight->image) }}" alt="" />
                         </div>
                     </div>
                     <div class="col-md-12 col-lg-3 order-lg-2 order-3">
                         <div class="hero-content-right">
                             <div class="hero-right-title">Editor's Pick</div>
                             <ul class="hero-editor-list">
-                                <li>
-                                    <a href="/blog-details.html">Poverty-reducing lessons from success stories rom
-                                        success
-                                        stories</a>
-                                    <p>by <span>Maliha Mannan</span></p>
-                                </li>
-                                <li>
-                                    <a href="/blog-details.html">Poverty-reducing lessons from success stories</a>
-                                    <p>ft. <span>Maliha Mannan</span></p>
-                                </li>
-                                <li>
-                                    <a href="/blog-details.html">Poverty-reducing lessons from success stories</a>
-                                    <p>by <span>Maliha Mannan</span></p>
-                                </li>
-                                <li>
-                                    <a href="/blog-details.html">Poverty-reducing lessons from success stories</a>
-                                    <p>by <span>Maliha Mannan</span></p>
-                                </li>
+                                @foreach ($editorPicks as $editor)
+                                    <li>
+                                        <a href="/blog-details.html">{{ Str::limit($editor->title, 55) }}</a>
+                                        <p>{{ $editor->form_editor }} <span>{{ $editor->user->name }}</span></p>
+                                    </li>
+                                @endforeach
+
                             </ul>
                         </div>
                     </div>
@@ -166,45 +155,46 @@
                         <div class="slider-content-center">
                             <div class="shortlight-item">
                                 <span>SPOTLIGHT</span>
-                                <div class="shortlight-title">
-                                    <a href="/blog-details.html">
-                                        Govt’s measures preventing brain drain: PM Hasina tells
-                                        Sangsad
-                                    </a>
-                                </div>
-                                <div class="shortlight-card">
-                                    <div class="shortlight-img">
-                                        <img src="/assets/images/home/short.png" alt="" />
+                                @foreach ($firstSectionPosts as $post)
+                                    <div class="shortlight-title">
+                                        <a href="{{ route('posts.show', $post->slug) }}">
+                                            {{ $post->title }}
+                                        </a>
                                     </div>
-                                    <div>
-                                        <p>
-                                            The answer to the title’s question is no. Let’s keep in
-                                            mind that Bangladesh is the eighth most populous
-                                        </p>
-                                        <div class="more-btn">
-                                            <a href="/blog-details.html">more
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
+                                    <div class="shortlight-card">
+                                        <div class="shortlight-img">
+                                            <img src="{{ asset($post->image) }}" alt="{{ $post->title }}" />
+                                        </div>
+                                        <div>
+                                            <p>
+                                                {!! Str::limit($post->description, 100) !!}
+                                            </p>
+                                            <div class="more-btn">
+                                                <a href="{{ route('posts.show', $post->slug) }}">more
+                                                    <i class="fa-solid fa-arrow-right"></i>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
                             <div class="shortlight-item-two">
                                 <div class="shortlight-card">
-                                    <div class="shortlight-img">
-                                        <img src="/assets/images/home/short-2.png" alt="" />
-                                    </div>
-                                    <div>
-                                        <a href="/blog-details.html" class="shortlight-card-text">
-                                            Govt’s measures preventing brain drain: PM Hasina tells
-                                            Sangsad
-                                        </a>
-                                        <div class="more-btn">
-                                            <a href="/blog-details.html">more
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
+                                    @foreach ($secondSectionPosts as $post)
+                                        <div class="shortlight-img">
+                                            <img src="{{ asset($post->image) }}" alt="{{ $post->title }}" />
                                         </div>
-                                    </div>
+                                        <div>
+                                            <a href="{{ route('posts.show', $post->slug) }}" class="shortlight-card-text">
+                                                {{ $post->title }}
+                                            </a>
+                                            <div class="more-btn">
+                                                <a href="{{ route('posts.show', $post->slug) }}">more
+                                                    <i class="fa-solid fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -213,22 +203,14 @@
                         <div class="hero-content-right">
                             <div class="hero-right-title">Policy Stream</div>
                             <ul class="hero-editor-list">
-                                <li>
-                                    <a href="/blog-details.html">Poverty-reducing lessons from success stories</a>
-                                    <p>by <span>Maliha Mannan</span></p>
-                                </li>
-                                <li>
-                                    <a href="/blog-details.html">Poverty-reducing lessons from success stories</a>
-                                    <p>by <span>Maliha Mannan</span></p>
-                                </li>
-                                <li>
-                                    <a href="/blog-details.html">Poverty-reducing lessons from success stories</a>
-                                    <p>by <span>Maliha Mannan</span></p>
-                                </li>
-                                <li>
-                                    <a href="/blog-details.html">Poverty-reducing lessons from success stories</a>
-                                    <p>by <span>Maliha Mannan</span></p>
-                                </li>
+                                @foreach ($policyStreams as $policy)
+                                    <li>
+                                        <a
+                                            href="{{ route('policy-streams.show', $policy->slug) }}">{{ Str::limit($policy->title, 55) }}</a>
+                                        <p>{{ $policy->post_type }} <span>{{ $policy->author->name }}</span></p>
+                                    </li>
+                                @endforeach
+
                             </ul>
                         </div>
                     </div>
@@ -527,8 +509,8 @@
                 </div>
                 <div class="explore-right">
                     <!-- <div class="explore-img">
-                  <img src="/assets/images/home/explore.png" alt="" />
-                </div> -->
+                                                                                                                                                  <img src="/assets/images/home/explore.png" alt="" />
+                                                                                                                                                </div> -->
                     <div class="explore-content">
                         <p>
                             Find out why <span>WhiteBoard</span> is the go to place for

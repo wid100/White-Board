@@ -1,5 +1,83 @@
 @extends('master.master')
+<style>
+    .multi-select-wrapper {
+        position: relative;
+        /* width: 300px; */
+        /* border: 1px solid #ccc; */
+        /* border-radius: 4px; */
+        /* padding: 5px; */
+        /* background-color: #fff; */
+        cursor: text;
+    }
 
+    .multi-select-box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        min-height: 40px;
+        border: 1px solid #172340;
+        padding: 8px;
+    }
+
+    .multi-select-box input {
+        border: none;
+        outline: none;
+        flex: 1;
+        padding: 5px;
+        min-width: 50px;
+        background: none;
+    }
+
+    .multi-select-options {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border: 1px solid #172340;
+        background-color: #060c17;
+        z-index: 1;
+        max-height: 150px;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    .multi-select-options label {
+        display: block;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .multi-select-options label:hover {
+        background-color: #6571ff;
+    }
+
+    .multi-select-options input[type="checkbox"]:disabled+span {
+        color: #fff;
+        cursor: not-allowed;
+    }
+
+    .selected-tag {
+        background-color: #6571ff;
+        border-radius: 2px;
+        padding: 5px 10px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        color: #fff;
+    }
+
+    .close-button {
+        margin-left: 5px;
+        cursor: pointer;
+        color: #c1c1c1;
+    }
+
+    .close-button:hover {
+        color: #f00;
+    }
+</style>
 @section('content')
     <div class="page-content">
         <nav class="page-breadcrumb">
@@ -59,21 +137,31 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="editor_pick" class="form-label">Editor Pick</label>
-                                        <select id="editor_pick" name="editor_pick[]" class="form-select"
-                                            multiple="multiple">
-                                            @foreach ($editor_picks as $editor_pick)
-                                                <option value="{{ $editor_pick->id }}"
-                                                    {{ in_array($editor_pick->id, json_decode($setting->editor_pick, true) ?: []) ? 'selected' : '' }}>
-                                                    {{ $editor_pick->title }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+
+                                        <div class="multi-select-wrapper">
+                                            <div class="multi-select-box">
+                                                <!-- This input serves both as a placeholder and a search box -->
+                                                <input type="text" class="search-input" placeholder="Select cars...">
+                                            </div>
+                                            <div class="multi-select-options">
+                                                @foreach ($editor_picks as $editor_pick)
+                                                    <label>
+                                                        <input type="checkbox" value="{{ $editor_pick->id }}"
+                                                            {{ in_array($editor_pick->id, json_decode($setting->editor_pick, true) ?: []) ? 'checked' : '' }}>
+                                                        <span>{{ $editor_pick->title }}</span>
+                                                    </label>
+                                                @endforeach
+                                            </div>
+                                            <!-- Hidden input to store selected values -->
+                                            <input type="hidden" name="editor_pick[]" class="hidden-editor-pick">
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- Policy Stream -->
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="policy_stream" class="form-label">Policy Stream</label>
+                                        <label for="policy_stream" class="form-label">Policy
+                                            Stream</label>
                                         <select id="policy_stream" name="policy_stream[]" class="form-select"
                                             multiple="multiple">
                                             @foreach ($policy_streams as $policy_stream)
@@ -136,7 +224,8 @@
                                 <!-- Latest Issue Post (using AJAX) -->
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="latest_issue_post" class="form-label">Latest Issue Post</label>
+                                        <label for="latest_issue_post" class="form-label">Latest Issue
+                                            Post</label>
                                         <select id="latest_issue_post" name="latest_issue_post[]" class="form-select"
                                             multiple="multiple">
                                             @foreach ($latestIssuePosts as $post)
@@ -152,7 +241,8 @@
                                 <!-- Latest Category -->
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="latest_category" class="form-label">Latest Category</label>
+                                        <label for="latest_category" class="form-label">Latest
+                                            Category</label>
                                         <select id="latest_category" name="latest_category[]" class="form-select"
                                             multiple="multiple">
                                             @foreach ($latest_categoris as $category)
@@ -169,6 +259,7 @@
 
                             <input class="btn btn-primary" type="submit" value="Submit">
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -210,8 +301,112 @@
                 }
             });
 
-            // Trigger the change event to load posts for the pre-selected issue
-            // $('#latest_issue').trigger('change');
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            function setupMultiSelect(wrapper) {
+                const selectedItems = [];
+
+                // Initialize selected items from existing data
+                $(wrapper).find('.multi-select-options input[type="checkbox"]:checked').each(function() {
+                    const value = $(this).val();
+                    const text = $(this).next('span').text().trim();
+                    selectedItems.push({
+                        value,
+                        text
+                    });
+                    $(this).prop('disabled', true); // Disable already selected checkboxes
+                });
+
+                function updateSelectedItems() {
+                    $(wrapper).find('.multi-select-box .selected-tag').remove(); // Clear existing tags
+
+                    selectedItems.forEach(item => {
+                        const tag = $('<span class="selected-tag"></span>').text(item.text);
+                        const closeButton = $('<span class="close-button">x</span>');
+
+                        // Remove item on close button click
+                        closeButton.click(function() {
+                            const index = selectedItems.findIndex(selectedItem => selectedItem
+                                .value === item.value);
+                            if (index > -1) {
+                                selectedItems.splice(index, 1);
+                                $(wrapper).find('.multi-select-options input[value="' + item.value +
+                                    '"]').prop('checked', false).prop('disabled', false);
+                                updateSelectedItems();
+                            }
+                        });
+
+                        tag.append(closeButton);
+                        $(wrapper).find('.search-input').before(tag); // Add tag before the input
+                    });
+
+                    $(wrapper).find('.search-input').attr('placeholder', selectedItems.length ? '' :
+                        'Select cars...');
+
+                    // Update hidden input with selected values
+                    const selectedValues = selectedItems.map(item => item.value);
+                    $(wrapper).find('.hidden-editor-pick').val(selectedValues.join(','));
+                }
+
+                updateSelectedItems(); // Initialize tags
+
+                // Toggle options visibility on input focus
+                $(wrapper).find('.search-input').focus(function() {
+                    $(wrapper).find('.multi-select-options').show();
+                    $(wrapper).find('.search-input').select(); // Focus and select text for input
+                });
+
+                // Filter options based on search input
+                $(wrapper).find('.search-input').on('input', function() {
+                    const query = $(this).val().toLowerCase();
+                    $(wrapper).find('.multi-select-options label').each(function() {
+                        const text = $(this).find('span').text().toLowerCase();
+                        $(this).toggle(text.includes(query));
+                    });
+                });
+
+                // Handle checkbox change
+                $(wrapper).find('.multi-select-options input[type="checkbox"]').change(function() {
+                    const value = $(this).val();
+                    const text = $(this).next('span').text().trim();
+
+                    if (this.checked) {
+                        selectedItems.push({
+                            value,
+                            text
+                        });
+                        $(this).prop('disabled', true);
+                    } else {
+                        const index = selectedItems.findIndex(item => item.value === value);
+                        if (index > -1) {
+                            selectedItems.splice(index, 1);
+                            $(this).prop('disabled', false);
+                        }
+                    }
+
+                    updateSelectedItems();
+                });
+
+                // Hide dropdown when clicking outside
+                $(document).click(function(event) {
+                    if (!$(event.target).closest(wrapper).length) {
+                        $(wrapper).find('.multi-select-options').hide();
+                    }
+                });
+
+                // Prevent closing when clicking inside the dropdown
+                $(wrapper).find('.multi-select-options').click(function(event) {
+                    event.stopPropagation();
+                });
+            }
+
+            // Initialize multi-select on all wrappers
+            $('.multi-select-wrapper').each(function() {
+                setupMultiSelect(this);
+            });
         });
     </script>
 @endsection

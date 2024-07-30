@@ -63,6 +63,12 @@ class User extends Authenticatable implements MustVerifyEmail, JWTSubject
     }
 
 
+    public function policystream()
+    {
+        return $this->hasMany(PolicyStream::class, 'author');
+    }
+
+
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *

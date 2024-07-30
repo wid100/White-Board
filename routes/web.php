@@ -15,6 +15,9 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PolicyStreamController;
 use Illuminate\Support\Facades\Artisan;
 
+use App\Http\Controllers\User\PostController as UserPostController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +50,10 @@ Route::get('/clear-cache', function () {
 
 
 Route::get('/', [HomeController::class, 'index'])->name('root');
+
+Route::get('/posts/{post}', [UserPostController::class, 'show'])->name('posts.show');
+Route::get('/policy-streams/{policyStream}', [PolicyStreamController::class, 'show'])->name('policy-streams.show');
+
 Auth::routes();
 
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
