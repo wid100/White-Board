@@ -32,15 +32,51 @@ class HomeSettingController extends Controller
         $latest_issues = Issue::all();
         $policy_streams = PolicyStream::all();
 
-        // Decode JSON from the database
+        // Decode JSON from the database for editor picks
         $editorPickJson = json_decode($setting->editor_pick, true);
-        $editorPickIds = $editorPickJson ? json_decode($editorPickJson[0], true) : []; // Adjust based on actual structure
+        $editorPickIds = !empty($editorPickJson) ? json_decode($editorPickJson[0], true) : [];
+
+        // Decode JSON for spotlight second
+        $spotlightSecondJson = json_decode($setting->spotlight_second, true);
+        $spotlightSecondIds = !empty($spotlightSecondJson) ? json_decode($spotlightSecondJson[0], true) : [];
+
+        // Decode JSON for policy streams
+        $policyStreamJson = json_decode($setting->policy_stream, true);
+        $policyStreamIds = !empty($policyStreamJson) ? json_decode($policyStreamJson[0], true) : [];
+
+        // Decode JSON for tailored for policymakers
+        $tailoredForPolicymakersJson = json_decode($setting->tailored_for_policymakers, true);
+        $tailoredForPolicymakersIds = !empty($tailoredForPolicymakersJson) ? json_decode($tailoredForPolicymakersJson[0], true) : [];
+
+        // Decode JSON for trending
+        $trendingJson = json_decode($setting->trending, true);
+        $trendingIds = !empty($trendingJson) ? json_decode($trendingJson[0], true) : [];
+
+        $latestCategoryJson = json_decode($setting->latest_category, true);
+        $latestCategoryIds = !empty($latestCategoryJson) ? json_decode($latestCategoryJson[0], true) : [];
+
 
         // Get posts related to the current latest issue
         $latestIssuePosts = $setting->latest_issue ? Post::where('issue_id', $setting->latest_issue)->get() : collect();
 
-        return view('admin.setting.edit', compact('setting', 'allPosts', 'editor_picks', 'latest_categoris', 'latest_issues', 'policy_streams', 'latestIssuePosts', 'editorPickIds'));
+        return view('admin.setting.edit', compact(
+            'setting',
+            'allPosts',
+            'editor_picks',
+            'latest_categoris',
+            'latest_issues',
+            'policy_streams',
+            'latestIssuePosts',
+            'editorPickIds',
+            'spotlightSecondIds',
+            'policyStreamIds',
+            'tailoredForPolicymakersIds',
+            'trendingIds',
+            'latestCategoryIds'
+        ));
     }
+
+
 
 
 

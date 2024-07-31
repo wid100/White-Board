@@ -122,15 +122,24 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="spotlight_second" class="form-label">Spotlight Second</label>
-                                        <select id="spotlight_second" name="spotlight_second[]" class="form-select"
-                                            multiple="multiple">
-                                            @foreach ($allPosts as $post)
-                                                <option value="{{ $post->id }}"
-                                                    {{ in_array($post->id, json_decode($setting->spotlight_second, true) ?: []) ? 'selected' : '' }}>
-                                                    {{ $post->title }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+
+                                        <div class="multi-select-wrapper spotlight-second-wrapper">
+                                            <div class="multi-select-box">
+                                                <input type="text" class="search-input"
+                                                    placeholder="Select spotlight second...">
+                                            </div>
+                                            <div class="multi-select-options">
+                                                @foreach ($allPosts as $post)
+                                                    <label>
+                                                        <input type="checkbox" value="{{ $post->id }}"
+                                                            {{ in_array($post->id, $spotlightSecondIds) ? 'checked' : '' }}>
+                                                        <span>{{ $post->title }}</span>
+                                                    </label>
+                                                @endforeach
+                                            </div>
+                                            <!-- Hidden input to store selected values -->
+                                            <input type="hidden" name="spotlight_second[]" class="hidden-spotlight-second">
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- Editor Pick -->
@@ -138,7 +147,7 @@
                                     <div class="mb-3">
                                         <label for="editor_pick" class="form-label">Editor Pick</label>
 
-                                        <div class="multi-select-wrapper">
+                                        <div class="multi-select-wrapper editor-pick-wrapper">
                                             <div class="multi-select-box">
                                                 <input type="text" class="search-input"
                                                     placeholder="Select editor picks...">
@@ -161,17 +170,25 @@
                                 <!-- Policy Stream -->
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="policy_stream" class="form-label">Policy
-                                            Stream</label>
-                                        <select id="policy_stream" name="policy_stream[]" class="form-select"
-                                            multiple="multiple">
-                                            @foreach ($policy_streams as $policy_stream)
-                                                <option value="{{ $policy_stream->id }}"
-                                                    {{ in_array($policy_stream->id, json_decode($setting->policy_stream, true) ?: []) ? 'selected' : '' }}>
-                                                    {{ $policy_stream->title }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                        <label for="policy_stream" class="form-label">Policy Stream</label>
+
+                                        <div class="multi-select-wrapper policy-stream-wrapper">
+                                            <div class="multi-select-box">
+                                                <input type="text" class="search-input"
+                                                    placeholder="Select policy streams...">
+                                            </div>
+                                            <div class="multi-select-options">
+                                                @foreach ($policy_streams as $policy_stream)
+                                                    <label>
+                                                        <input type="checkbox" value="{{ $policy_stream->id }}"
+                                                            {{ in_array($policy_stream->id, $policyStreamIds) ? 'checked' : '' }}>
+                                                        <span>{{ $policy_stream->title }}</span>
+                                                    </label>
+                                                @endforeach
+                                            </div>
+                                            <!-- Hidden input to store selected values -->
+                                            <input type="hidden" name="policy_stream[]" class="hidden-policy-stream">
+                                        </div>
                                     </div>
                                 </div>
 
@@ -180,29 +197,50 @@
                                     <div class="mb-3">
                                         <label for="tailored_for_policymakers" class="form-label">Tailored for
                                             Policymakers</label>
-                                        <select id="tailored_for_policymakers" name="tailored_for_policymakers[]"
-                                            class="form-select" multiple="multiple">
-                                            @foreach ($allPosts as $post)
-                                                <option value="{{ $post->id }}"
-                                                    {{ in_array($post->id, json_decode($setting->tailored_for_policymakers, true) ?: []) ? 'selected' : '' }}>
-                                                    {{ $post->title }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+
+                                        <div class="multi-select-wrapper tailored-for-policymakers-wrapper">
+                                            <div class="multi-select-box">
+                                                <input type="text" class="search-input"
+                                                    placeholder="Select tailored for policymakers...">
+                                            </div>
+                                            <div class="multi-select-options">
+                                                @foreach ($allPosts as $post)
+                                                    <label>
+                                                        <input type="checkbox" value="{{ $post->id }}"
+                                                            {{ in_array($post->id, $tailoredForPolicymakersIds) ? 'checked' : '' }}>
+                                                        <span>{{ $post->title }}</span>
+                                                    </label>
+                                                @endforeach
+                                            </div>
+                                            <!-- Hidden input to store selected values -->
+                                            <input type="hidden" name="tailored_for_policymakers[]"
+                                                class="hidden-tailored-for-policymakers">
+                                        </div>
                                     </div>
                                 </div>
+
                                 <!-- Trending -->
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="trending" class="form-label">Trending</label>
-                                        <select id="trending" name="trending[]" class="form-select" multiple="multiple">
-                                            @foreach ($allPosts as $post)
-                                                <option value="{{ $post->id }}"
-                                                    {{ in_array($post->id, json_decode($setting->trending, true) ?: []) ? 'selected' : '' }}>
-                                                    {{ $post->title }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+
+                                        <div class="multi-select-wrapper trending-wrapper">
+                                            <div class="multi-select-box">
+                                                <input type="text" class="search-input"
+                                                    placeholder="Select trending posts...">
+                                            </div>
+                                            <div class="multi-select-options">
+                                                @foreach ($allPosts as $post)
+                                                    <label>
+                                                        <input type="checkbox" value="{{ $post->id }}"
+                                                            {{ in_array($post->id, $trendingIds) ? 'checked' : '' }}>
+                                                        <span>{{ $post->title }}</span>
+                                                    </label>
+                                                @endforeach
+                                            </div>
+                                            <!-- Hidden input to store selected values -->
+                                            <input type="hidden" name="trending[]" class="hidden-trending">
+                                        </div>
                                     </div>
                                 </div>
 
@@ -242,17 +280,26 @@
                                 <!-- Latest Category -->
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="latest_category" class="form-label">Latest
-                                            Category</label>
-                                        <select id="latest_category" name="latest_category[]" class="form-select"
-                                            multiple="multiple">
-                                            @foreach ($latest_categoris as $category)
-                                                <option value="{{ $category->id }}"
-                                                    {{ in_array($category->id, json_decode($setting->latest_category, true) ?: []) ? 'selected' : '' }}>
-                                                    {{ $category->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                        <label for="latest_category" class="form-label">Latest Category</label>
+
+                                        <div class="multi-select-wrapper latest-category-wrapper">
+                                            <div class="multi-select-box">
+                                                <input type="text" class="search-input"
+                                                    placeholder="Select latest categories...">
+                                            </div>
+                                            <div class="multi-select-options">
+                                                @foreach ($latest_categoris as $category)
+                                                    <label>
+                                                        <input type="checkbox" value="{{ $category->id }}"
+                                                            {{ in_array($category->id, $latestCategoryIds) ? 'checked' : '' }}>
+                                                        <span>{{ $category->name }}</span>
+                                                    </label>
+                                                @endforeach
+                                            </div>
+                                            <!-- Hidden input to store selected values -->
+                                            <input type="hidden" name="latest_category[]"
+                                                class="hidden-latest-category">
+                                        </div>
                                     </div>
                                 </div>
 
@@ -345,16 +392,15 @@
                     });
 
                     $(wrapper).find('.search-input').attr('placeholder', selectedItems.length ? '' :
-                        'Select editor picks...');
+                        'Select options...');
 
                     // Update hidden input with selected values
                     const selectedValues = selectedItems.map(item => item.value);
-                    $(wrapper).find('.hidden-editor-pick').val(JSON.stringify(
-                    selectedValues)); // Ensure correct JSON array
+                    $(wrapper).find(
+                        '.hidden-editor-pick, .hidden-spotlight-second, .hidden-policy-stream, .hidden-tailored-for-policymakers, .hidden-trending, .hidden-latest-category'
+                    ).val(JSON
+                        .stringify(selectedValues)); // Ensure correct JSON array
                 }
-
-
-
 
                 updateSelectedItems(); // Initialize tags
 
