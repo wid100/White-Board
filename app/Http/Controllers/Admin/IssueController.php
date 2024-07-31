@@ -29,11 +29,10 @@ class IssueController extends Controller
 
     public function getPosts($id)
     {
-        $issue = Issue::findOrFail($id);
-        $posts = Post::where('issue_id', $issue->id)->get();
-
-        return response()->json($posts);
+        $posts = Post::where('issue_id', $id)->get(); // Fetch posts by issue ID
+        return response()->json($posts); // Return posts as JSON
     }
+
     /**
      * Show the form for creating a new resource.
      *

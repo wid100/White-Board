@@ -104,7 +104,7 @@
                                         <label for="spotlight" class="form-label">Spotlight <span
                                                 class="text-danger">*</span></label>
                                         <select id="spotlight" name="spotlight"
-                                            class="form-select @error('spotlight') is-invalid @enderror">
+                                            class="js-example-basic-single form-select @error('spotlight') is-invalid @enderror">
                                             <option value="">Select Spotlight</option>
                                             @foreach ($allPosts as $post)
                                                 <option value="{{ $post->id }}"
@@ -248,7 +248,8 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="latest_issue" class="form-label">Latest Issue</label>
-                                        <select id="latest_issue" name="latest_issue" class="form-select">
+                                        <select id="latest_issue" name="latest_issue"
+                                            class="js-example-basic-single form-select">
                                             <option value="">Select Latest Issue</option>
                                             @foreach ($latest_issues as $issue)
                                                 <option value="{{ $issue->id }}"
@@ -261,7 +262,7 @@
                                 </div>
 
                                 <!-- Latest Issue Post (using AJAX) -->
-                                <div class="col-md-6">
+                                {{-- <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="latest_issue_post" class="form-label">Latest Issue
                                             Post</label>
@@ -274,6 +275,31 @@
                                                 </option>
                                             @endforeach
                                         </select>
+                                    </div>
+                                </div> --}}
+
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="latest_issue_post" class="form-label">Latest Issue Post</label>
+                                        <div class="multi-select-wrapper latest-post-wrapper">
+                                            <div class="multi-select-box">
+                                                <input type="text" class="search-input"
+                                                    placeholder="Select latest posts...">
+                                            </div>
+                                            <div class="multi-select-options">
+                                                <!-- Options will be dynamically loaded via AJAX -->
+                                                @foreach ($latestIssuePosts as $post)
+                                                    <label>
+                                                        <input type="checkbox" value="{{ $post->id }}"
+                                                            {{ in_array($post->id, $latestIssuePostIds) ? 'checked' : '' }}>
+                                                        <span>{{ $post->title }}</span>
+                                                    </label>
+                                                @endforeach
+                                            </div>
+                                            <!-- Hidden input to store selected values -->
+                                            <input type="hidden" name="latest_issue_post[]" id="latest_issue_post"
+                                                class="hidden-latest-post">
+                                        </div>
                                     </div>
                                 </div>
 
@@ -318,9 +344,6 @@
 @section('js')
     <script>
         $(document).ready(function() {
-            // Initialize select2
-            $('.form-select').select2();
-
             // AJAX call to load posts based on selected issue
             $('#latest_issue').on('change', function() {
                 var issueId = $(this).val();
@@ -330,30 +353,36 @@
                         type: 'GET',
                         dataType: 'json',
                         success: function(data) {
-                            $('#latest_issue_post').empty();
+                            const multiSelectOptions = $(
+                                '.latest-post-wrapper .multi-select-options');
+                            multiSelectOptions.empty();
+
                             var selectedPosts = @json(json_decode($setting->latest_issue_post, true) ?: []);
                             $.each(data, function(key, post) {
-                                var selected = selectedPosts.includes(post.id) ?
-                                    'selected' : '';
-                                $('#latest_issue_post').append('<option value="' + post
-                                    .id + '"' + selected + '>' + post.title +
-                                    '</option>');
+                                var selected = selectedPosts.includes(post.id
+                                    .toString()) ? 'checked' : '';
+                                multiSelectOptions.append(
+                                    '<label><input type="checkbox" value="' + post
+                                    .id + '" ' + selected + '> <span>' + post
+                                    .title + '</span></label>'
+                                );
                             });
+
+                            // Reinitialize custom multi-select
+                            setupMultiSelect($('.latest-post-wrapper'));
                         },
                         error: function(xhr, status, error) {
-                            console.error('AJAX Error: ' + status + error);
+                            console.error('AJAX Error: ' + status + ' ' + error);
                         }
                     });
                 } else {
-                    $('#latest_issue_post').empty();
+                    const multiSelectOptions = $('.latest-post-wrapper .multi-select-options');
+                    multiSelectOptions.empty();
+                    $('#latest_issue_post').val(''); // Clear hidden input
                 }
             });
 
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
+            // Setup custom multi-select
             function setupMultiSelect(wrapper) {
                 const selectedItems = [];
 
@@ -397,9 +426,9 @@
                     // Update hidden input with selected values
                     const selectedValues = selectedItems.map(item => item.value);
                     $(wrapper).find(
-                        '.hidden-editor-pick, .hidden-spotlight-second, .hidden-policy-stream, .hidden-tailored-for-policymakers, .hidden-trending, .hidden-latest-category'
-                    ).val(JSON
-                        .stringify(selectedValues)); // Ensure correct JSON array
+                        '.hidden-latest-post, .hidden-latest-category, .hidden-editor-pick, .hidden-spotlight-second, .hidden-policy-stream, .hidden-tailored-for-policymakers, .hidden-trending, .hidden-latest-issue-post'
+                    ).val(JSON.stringify(
+                        selectedValues)); // Ensure correct JSON array
                 }
 
                 updateSelectedItems(); // Initialize tags

@@ -56,6 +56,10 @@ class HomeSettingController extends Controller
         $latestCategoryIds = !empty($latestCategoryJson) ? json_decode($latestCategoryJson[0], true) : [];
 
 
+        $latestIssuePostsJson = json_decode($setting->latest_issue_post, true);
+        $latestIssuePostIds = !empty($latestIssuePostsJson) ? json_decode($latestIssuePostsJson[0], true) : [];
+
+
         // Get posts related to the current latest issue
         $latestIssuePosts = $setting->latest_issue ? Post::where('issue_id', $setting->latest_issue)->get() : collect();
 
@@ -72,7 +76,8 @@ class HomeSettingController extends Controller
             'policyStreamIds',
             'tailoredForPolicymakersIds',
             'trendingIds',
-            'latestCategoryIds'
+            'latestCategoryIds',
+            'latestIssuePostIds'
         ));
     }
 
