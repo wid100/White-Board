@@ -22,23 +22,17 @@ class HomeController extends Controller
         // Helper function to decode the nested JSON
         $decodeJsonArray = function ($jsonString) {
             if (is_string($jsonString)) {
-                // Decode the outer JSON string to get the array string
                 $decodedArrayString = json_decode($jsonString, true);
-
                 if (is_array($decodedArrayString) && !empty($decodedArrayString)) {
-                    // Decode the array string to get the actual array of IDs
                     return json_decode($decodedArrayString[0], true) ?: [];
                 }
             }
-
             return [];
         };
 
         // Generic function to fetch and order collections based on IDs
         $fetchAndOrderCollection = function ($model, $ids) {
             $collection = $model::whereIn('id', $ids)->get();
-
-            // Reorder the collection based on the original array of IDs
             return $collection->sortBy(function ($item) use ($ids) {
                 return array_search($item->id, $ids);
             })->values();
@@ -51,10 +45,9 @@ class HomeController extends Controller
 
         // Fetch and order collections
         $spotlight = Post::find($homeSetting->spotlight);
-
         $editorPicks = $fetchAndOrderCollection(Editornote::class, $editorPickIds);
         $policyStreams = $fetchAndOrderCollection(PolicyStream::class, $policyStreamIds);
-        $trendingIds = $decodeJsonArray($homeSetting->trending); // Corrected field name
+        $trendingIds = $decodeJsonArray($homeSetting->trending);
         $trendings = $fetchAndOrderCollection(Post::class, $trendingIds);
         $tailoredForPolicymakers = $fetchAndOrderCollection(Post::class, $decodeJsonArray($homeSetting->tailored_for_policymakers));
         $latestIssue = Issue::find($homeSetting->latest_issue);
@@ -62,18 +55,26 @@ class HomeController extends Controller
         $latestCategories = $fetchAndOrderCollection(Category::class, $decodeJsonArray($homeSetting->latest_category));
 
         // Split the latestIssuePosts into first, second, and remaining
-        $firstLatestIssuePost = $latestIssuePosts->first(); // Get the first post
-        $secondLatestIssuePost = $latestIssuePosts->slice(1, 1)->first(); // Get the second post
-        $remainingLatestIssuePosts = $latestIssuePosts->slice(2); // Get the rest starting from the third
+        $firstLatestIssuePost = $latestIssuePosts->first();
+        $secondLatestIssuePost = $latestIssuePosts->slice(1, 1)->first();
+        $remainingLatestIssuePosts = $latestIssuePosts->slice(2);
+        $latest5Issues = Issue::orderBy('created_at', 'desc')->take(5)->get();
+
+        // Fetch latest 5 posts for each category
+        $categoriesWithLatestPosts = $latestCategories->map(function ($category) {
+            $posts = Post::where('category_id', $category->id)
+                ->orderBy('created_at', 'desc')
+                ->take(5)
+                ->get();
+            return [
+                'category' => $category,
+                'posts' => $posts,
+            ];
+        });
 
         // Second spotlight section
         $spotlightSecondPosts = $fetchAndOrderCollection(Post::class, $spotlightSecondIds);
-
-        // Split the reordered spotlightSecondPosts into two collections
         [$firstSectionPosts, $secondSectionPosts] = $spotlightSecondPosts->split(2);
-
-        $latest5Issues = Issue::orderBy('created_at', 'desc')->take(5)->get();
-
 
         return view('welcome', compact(
             'homeSetting',
@@ -83,13 +84,14 @@ class HomeController extends Controller
             'trendings',
             'tailoredForPolicymakers',
             'latestIssue',
-            'firstLatestIssuePost',       // Pass the first post
-            'secondLatestIssuePost',      // Pass the second post
-            'remainingLatestIssuePosts',  // Pass the remaining posts
+            'firstLatestIssuePost',
+            'secondLatestIssuePost',
+            'remainingLatestIssuePosts',
             'latestCategories',
+            'categoriesWithLatestPosts',  // Pass the categories with latest posts
             'firstSectionPosts',
             'secondSectionPosts',
-            'latest5Issues',
+            'latest5Issues'
         ));
     }
 }

@@ -383,8 +383,8 @@
                 </div>
                 <div class="explore-right">
                     <!-- <div class="explore-img">
-                                                                                                                                                                                                                                                                                                              <img src="/assets/images/home/explore.png" alt="" />
-                                                                                                                                                                                                                                                                                                            </div> -->
+                                                                                                                                                                                                                                                                                                                                  <img src="/assets/images/home/explore.png" alt="" />
+                                                                                                                                                                                                                                                                                                                                </div> -->
                     <div class="explore-content">
                         <p>
                             Find out why <span>WhiteBoard</span> is the go to place for
@@ -527,575 +527,58 @@
 
                 <div class="thoughts-desktap">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="thoughts-item">
-                                <h2>Economics</h2>
-                                <div class="thoughts-list">
-                                    <ul>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                    </ul>
+                        @foreach ($categoriesWithLatestPosts as $categoryData)
+                            <div class="col-md-4">
+                                <div class="thoughts-item">
+                                    <h2>{{ $categoryData['category']->name }}</h2>
+                                    <div class="thoughts-list">
+                                        <ul>
+                                            @foreach ($categoryData['posts'] as $post)
+                                                <li>
+                                                    <a href=""><span>{{ $post->author->name }}</span>
+                                                    </a>
+                                                    <a href="{{ route('posts.show', $post->slug) }}">
+                                                        {{ Str::limit($post->title, 70) }}</a>
+                                                </li>
+                                            @endforeach
+
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thoughts-item">
-                                <h2>Politics</h2>
-                                <div class="thoughts-list">
-                                    <ul>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thoughts-item">
-                                <h2>Development</h2>
-                                <div class="thoughts-list">
-                                    <ul>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thoughts-item">
-                                <h2>Sustainability</h2>
-                                <div class="thoughts-list">
-                                    <ul>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thoughts-item">
-                                <h2>Culture</h2>
-                                <div class="thoughts-list">
-                                    <ul>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thoughts-item">
-                                <h2>Innovation</h2>
-                                <div class="thoughts-list">
-                                    <ul>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                        <li>
-                                            <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                            </a>
-                                            <a href="/blog-details.html">
-                                                Untangling Dhaka will smoothen Bangladesh’s urban
-                                                governance</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="thoughts-mobile accordion-flush" id="accordionExample">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#coll1" aria-expanded="true" aria-controls="coll1">
-                                        Economics
-                                    </button>
-                                </h2>
-                                <div id="coll1" class="accordion-collapse collapse show"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="thoughts-list thoughts-list-mobile">
-                                        <ul>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                        </ul>
+                            @foreach ($categoriesWithLatestPosts as $categoryData)
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#{{ $categoryData['category']->id }}" aria-expanded="true"
+                                            aria-controls="{{ $categoryData['category']->id }}">
+                                            {{ $categoryData['category']->name }}
+                                        </button>
+                                    </h2>
+                                    <div id="{{ $categoryData['category']->id }}"
+                                        class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                        <div class="thoughts-list thoughts-list-mobile">
+                                            <ul>
+                                                @foreach ($categoryData['posts'] as $post)
+                                                    <li>
+                                                        <a href=""><span>{{ $post->author->name }}</span>
+                                                        </a>
+                                                        <a href="{{ route('posts.show', $post->slug) }}">
+                                                            {{ Str::limit($post->title, 70) }}</a>
+                                                    </li>
+                                                @endforeach
+
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#coll2" aria-expanded="true" aria-controls="coll2">
-                                        Politics
-                                    </button>
-                                </h2>
-                                <div id="coll2" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="thoughts-list thoughts-list-mobile">
-                                        <ul>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#coll3" aria-expanded="true" aria-controls="coll3">
-                                        Development
-                                    </button>
-                                </h2>
-                                <div id="coll3" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="thoughts-list thoughts-list-mobile">
-                                        <ul>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#coll4" aria-expanded="true" aria-controls="coll4">
-                                        Sustainability
-                                    </button>
-                                </h2>
-                                <div id="coll4" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="thoughts-list thoughts-list-mobile">
-                                        <ul>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#coll5" aria-expanded="true" aria-controls="coll5">
-                                        Culture
-                                    </button>
-                                </h2>
-                                <div id="coll5" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="thoughts-list thoughts-list-mobile">
-                                        <ul>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#coll6" aria-expanded="true" aria-controls="coll6">
-                                        Innovation
-                                    </button>
-                                </h2>
-                                <div id="coll6" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="thoughts-list thoughts-list-mobile">
-                                        <ul>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                            <li>
-                                                <a href="/writer.html"><span>MOHAMMAD AL-SUBAHAN</span>
-                                                </a>
-                                                <a href="/blog-details.html">
-                                                    Untangling Dhaka will smoothen Bangladesh’s urban
-                                                    governance</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
