@@ -163,7 +163,7 @@
                                     </div>
                                     <div class="shortlight-card">
                                         <div class="shortlight-img">
-                                            <img src="{{ asset($post->image) }}" alt="{{ $post->title }}" />
+                                            <img src="{{ asset($post->image) }}" alt="{{ $post->title }}" width="100px" />
                                         </div>
                                         <div>
                                             <p>
@@ -300,110 +300,34 @@
                             </div>
                             <div class="blog-content">
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="blog-card-item">
-                                            <a class="blog-img" href="/blog-details.html">
-                                                <img src="/assets/images/blog/1.png" alt="" />
-                                            </a>
-                                            <div class="blog-card-content">
-                                                <span class="category-name">Culture</span>
-                                                <div class="blog-title">
-                                                    <a href="/blog-details.html">Poverty-reducing lessons from succesys
-                                                        stories</a>
-                                                </div>
-                                                <p class="blog-owner">
-                                                    by <span>Maliha Mannan</span>
-                                                </p>
-                                                <p>
-                                                    The answer to the title’s question is no. Let’s keep
-                                                    in mind that Bangladesh is the eighth most populous
-                                                </p>
-                                                <div class="more-btn">
-                                                    <a href="/blog-details.html">more
-                                                        <i class="fa-solid fa-arrow-right"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="blog-card-item">
-                                            <a class="blog-img" href="/blog-details.html">
-                                                <img src="/assets/images/blog/1.png" alt="" />
-                                            </a>
-                                            <div class="blog-card-content">
-                                                <span class="category-name">Culture</span>
-                                                <div class="blog-title">
-                                                    <a href="/blog-details.html">Poverty-reducing lessons from succesys
-                                                        stories</a>
-                                                </div>
-                                                <p class="blog-owner">
-                                                    by <span>Maliha Mannan</span>
-                                                </p>
-                                                <p>
-                                                    The answer to the title’s question is no. Let’s keep
-                                                    in mind that Bangladesh is the eighth most populous
-                                                </p>
-                                                <div class="more-btn">
-                                                    <a href="/blog-details.html">more
-                                                        <i class="fa-solid fa-arrow-right"></i>
-                                                    </a>
+                                    @foreach ($tailoredForPolicymakers as $post)
+                                        <div class="col-md-6">
+                                            <div class="blog-card-item">
+                                                <a class="blog-img" href="{{ route('posts.show', $post->slug) }}">
+                                                    <img src="{{ asset($post->image) }}" alt="" />
+                                                </a>
+                                                <div class="blog-card-content">
+                                                    <span class="category-name">{{ $post->category->name }}</span>
+                                                    <div class="blog-title">
+                                                        <a
+                                                            href="{{ route('posts.show', $post->slug) }}">{{ Str::limit($post->title, 50) }}</a>
+                                                    </div>
+                                                    <p class="blog-owner">
+                                                        {{ $post->post_type }} <span>{{ $post->author->name }}</span>
+                                                    </p>
+                                                    <p>
+                                                        {!! Str::limit($post->description, 100) !!}
+                                                    </p>
+                                                    <div class="more-btn">
+                                                        <a href="{{ route('posts.show', $post->slug) }}">more
+                                                            <i class="fa-solid fa-arrow-right"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="blog-card-item">
-                                            <a class="blog-img" href="/blog-details.html">
-                                                <img src="/assets/images/blog/1.png" alt="" />
-                                            </a>
-                                            <div class="blog-card-content">
-                                                <span class="category-name">Culture</span>
-                                                <div class="blog-title">
-                                                    <a href="/blog-details.html">Poverty-reducing lessons from succesys
-                                                        stories</a>
-                                                </div>
-                                                <p class="blog-owner">
-                                                    by <span>Maliha Mannan</span>
-                                                </p>
-                                                <p>
-                                                    The answer to the title’s question is no. Let’s keep
-                                                    in mind that Bangladesh is the eighth most populous
-                                                </p>
-                                                <div class="more-btn">
-                                                    <a href="/blog-details.html">more
-                                                        <i class="fa-solid fa-arrow-right"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="blog-card-item">
-                                            <a class="blog-img" href="/blog-details.html">
-                                                <img src="/assets/images/blog/1.png" alt="" />
-                                            </a>
-                                            <div class="blog-card-content">
-                                                <span class="category-name">Culture</span>
-                                                <div class="blog-title">
-                                                    <a href="/blog-details.html">Poverty-reducing lessons from succesys
-                                                        stories</a>
-                                                </div>
-                                                <p class="blog-owner">
-                                                    by <span>Maliha Mannan</span>
-                                                </p>
-                                                <p>
-                                                    The answer to the title’s question is no. Let’s keep
-                                                    in mind that Bangladesh is the eighth most populous
-                                                </p>
-                                                <div class="more-btn">
-                                                    <a href="/blog-details.html">more
-                                                        <i class="fa-solid fa-arrow-right"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
+
                                 </div>
                             </div>
                         </div>
@@ -415,71 +339,21 @@
                             </div>
                             <div class="trending-content">
                                 <ul class="trening-list-items">
-                                    <li class="trening-list-item">
-                                        <div class="trening-number">
-                                            <h4>1</h4>
-                                        </div>
-                                        <div class="trening-list-content">
-                                            <div class="trending-title">
-                                                <a href="/blog-details.html">Premier Cement’s profit drops 11% in
-                                                    January-March
-                                                    despite sales increase </a>
+                                    @foreach ($trendings as $key => $post)
+                                        <li class="trening-list-item">
+                                            <div class="trening-number">
+                                                <h4>{{ $key + 1 }}</h4>
                                             </div>
-                                            <p>by <span>Maliha Mannan, Aditya Kabir</span></p>
-                                        </div>
-                                    </li>
-                                    <li class="trening-list-item">
-                                        <div class="trening-number">
-                                            <h4>2</h4>
-                                        </div>
-                                        <div class="trening-list-content">
-                                            <div class="trending-title">
-                                                <a href="/blog-details.html">Premier Cement’s profit drops 11% in
-                                                    January-March
-                                                    despite sales increase </a>
+                                            <div class="trening-list-content">
+                                                <div class="trending-title">
+                                                    <a
+                                                        href="{{ route('posts.show', $post->slug) }}">{{ Str::limit($post->title, 100) }} </a>
+                                                </div>
+                                                <p>{{ $post->post_type }} <span>{{ $post->author->name }}</span></p>
                                             </div>
-                                            <p>by <span>Maliha Mannan, Aditya Kabir</span></p>
-                                        </div>
-                                    </li>
-                                    <li class="trening-list-item">
-                                        <div class="trening-number">
-                                            <h4>3</h4>
-                                        </div>
-                                        <div class="trening-list-content">
-                                            <div class="trending-title">
-                                                <a href="/blog-details.html">Premier Cement’s profit drops 11% in
-                                                    January-March
-                                                    despite sales increase </a>
-                                            </div>
-                                            <p>by <span>Maliha Mannan, Aditya Kabir</span></p>
-                                        </div>
-                                    </li>
-                                    <li class="trening-list-item">
-                                        <div class="trening-number">
-                                            <h4>4</h4>
-                                        </div>
-                                        <div class="trening-list-content">
-                                            <div class="trending-title">
-                                                <a href="/blog-details.html">Premier Cement’s profit drops 11% in
-                                                    January-March
-                                                    despite sales increase </a>
-                                            </div>
-                                            <p>by <span>Maliha Mannan, Aditya Kabir</span></p>
-                                        </div>
-                                    </li>
-                                    <li class="trening-list-item">
-                                        <div class="trening-number">
-                                            <h4>5</h4>
-                                        </div>
-                                        <div class="trening-list-content">
-                                            <div class="trending-title">
-                                                <a href="/blog-details.html">Premier Cement’s profit drops 11% in
-                                                    January-March
-                                                    despite sales increase </a>
-                                            </div>
-                                            <p>by <span>Maliha Mannan, Aditya Kabir</span></p>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    @endforeach
+
                                 </ul>
                                 <div class="trending-add">
                                     <img src="/assets/images/blog/adds.png" alt="" />
@@ -509,8 +383,8 @@
                 </div>
                 <div class="explore-right">
                     <!-- <div class="explore-img">
-                                                                                                                                                  <img src="/assets/images/home/explore.png" alt="" />
-                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                              <img src="/assets/images/home/explore.png" alt="" />
+                                                                                                                                                                                                                                            </div> -->
                     <div class="explore-content">
                         <p>
                             Find out why <span>WhiteBoard</span> is the go to place for
@@ -536,7 +410,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <a href="/blog-details.html" class="latest-img">
-                            <img src="/assets/images/home/latest-img.png" alt="" />
+                            <img src="{{ asset($latestIssue->image) }}" alt="{{ $latestIssue->name }}" />
                         </a>
                     </div>
                     <div class="col-md-5">
