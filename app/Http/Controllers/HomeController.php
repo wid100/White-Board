@@ -41,7 +41,7 @@ class HomeController extends Controller
             // Reorder the collection based on the original array of IDs
             return $collection->sortBy(function ($item) use ($ids) {
                 return array_search($item->id, $ids);
-            })->values(); // Use values() to reset keys
+            })->values();
         };
 
         // Decode IDs from the home settings
@@ -72,6 +72,9 @@ class HomeController extends Controller
         // Split the reordered spotlightSecondPosts into two collections
         [$firstSectionPosts, $secondSectionPosts] = $spotlightSecondPosts->split(2);
 
+        $latest5Issues = Issue::orderBy('created_at', 'desc')->take(5)->get();
+
+
         return view('welcome', compact(
             'homeSetting',
             'spotlight',
@@ -86,6 +89,7 @@ class HomeController extends Controller
             'latestCategories',
             'firstSectionPosts',
             'secondSectionPosts',
+            'latest5Issues',
         ));
     }
 }

@@ -383,8 +383,8 @@
                 </div>
                 <div class="explore-right">
                     <!-- <div class="explore-img">
-                                                                                                                                                                                                                                                                                  <img src="/assets/images/home/explore.png" alt="" />
-                                                                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                              <img src="/assets/images/home/explore.png" alt="" />
+                                                                                                                                                                                                                                                                                                            </div> -->
                     <div class="explore-content">
                         <p>
                             Find out why <span>WhiteBoard</span> is the go to place for
@@ -498,46 +498,17 @@
                     </div>
                 </div>
                 <div class="recent-issue-items">
-                    <div class="recent-issue-item">
-                        <a href="/issue-details.html">
-                            <div class="recent-img">
-                                <img src="/assets/images/home/recent-1.png" alt="" />
-                            </div>
-                            <p>December 2020</p>
-                        </a>
-                    </div>
-                    <div class="recent-issue-item">
-                        <a href="/issue-details.html">
-                            <div class="recent-img">
-                                <img src="/assets/images/home/recent-1.png" alt="" />
-                            </div>
-                            <p>December 2020</p>
-                        </a>
-                    </div>
-                    <div class="recent-issue-item">
-                        <a href="/issue-details.html">
-                            <div class="recent-img">
-                                <img src="/assets/images/home/recent-1.png" alt="" />
-                            </div>
-                            <p>December 2020</p>
-                        </a>
-                    </div>
-                    <div class="recent-issue-item">
-                        <a href="/issue-details.html">
-                            <div class="recent-img">
-                                <img src="/assets/images/home/recent-1.png" alt="" />
-                            </div>
-                            <p>December 2020</p>
-                        </a>
-                    </div>
-                    <div class="recent-issue-item">
-                        <a href="/issue-details.html">
-                            <div class="recent-img">
-                                <img src="/assets/images/home/recent-1.png" alt="" />
-                            </div>
-                            <p>December 2020</p>
-                        </a>
-                    </div>
+                    @foreach ($latest5Issues as $issue)
+                        <div class="recent-issue-item">
+                            <a href="/issue-details.html">
+                                <div class="recent-img">
+                                    <img src="{{ asset($issue->image) }}" alt="" />
+                                </div>
+                                <p>{{ $issue->month->name }} {{ $issue->year->year }}</p>
+                            </a>
+                        </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>
@@ -549,7 +520,7 @@
             <div class="thoughts-wrapper">
                 <div class="thoughts-header">
                     <div class="thought-title-img">
-                        <img src="/assets/images/icon/shap-icon.svg" alt="" />
+                        <img src="{{ asset('/frontend/images/icon/shap-icon.svg') }}" alt="" />
                     </div>
                     <h1>Thoughts in motion</h1>
                 </div>
