@@ -383,8 +383,8 @@
                 </div>
                 <div class="explore-right">
                     <!-- <div class="explore-img">
-                                                                                                                                                                                                                                              <img src="/assets/images/home/explore.png" alt="" />
-                                                                                                                                                                                                                                            </div> -->
+                                                                                                                                                                                                                                                                                  <img src="/assets/images/home/explore.png" alt="" />
+                                                                                                                                                                                                                                                                                </div> -->
                     <div class="explore-content">
                         <p>
                             Find out why <span>WhiteBoard</span> is the go to place for
@@ -415,21 +415,23 @@
                     </div>
                     <div class="col-md-5">
                         <div class="blog-card-item latest-issue-item">
-                            <a class="blog-img" href="/blog-details.html">
-                                <img src="/assets/images/home/hasina.png" alt="" />
+                            <a class="blog-img" href="{{ route('posts.show', $post->slug) }}">
+                                <img src="{{ $firstLatestIssuePost->image }}"
+                                    alt="{{ $firstLatestIssuePost->title }}" />
                             </a>
                             <div class="blog-card-content">
                                 <div class="blog-title">
-                                    <a href="/blog-details.html">Poverty-reducing lessons from succesys stories</a>
+                                    <a
+                                        href="{{ route('posts.show', $firstLatestIssuePost->slug) }}">{{ Str::limit($firstLatestIssuePost->title, 70) }}</a>
                                 </div>
-                                <p class="blog-owner">by <span> Maliha Mannan</span></p>
+                                <p class="blog-owner">{{ $firstLatestIssuePost->post_type }}
+                                    <span>{{ $firstLatestIssuePost->author->name }}</span>
+                                </p>
                                 <p>
-                                    The answer to the title’s question is no. Let’s keep in mind
-                                    that Bangladesh is the eighth most populousmind that
-                                    Bangladesh is the eighth most populousmind
+                                    {!! Str::limit($post->description, 150) !!}
                                 </p>
                                 <div class="more-btn">
-                                    <a href="/blog-details.html">more
+                                    <a href="{{ route('posts.show', $firstLatestIssuePost->slug) }}">more
                                         <i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -437,39 +439,45 @@
                         </div>
                     </div>
                     <div class="col-md-3">
+
                         <div class="blog-card-item latest-issue-item latest-issue-item-left">
-                            <a class="blog-img" href="/blog-details.html">
-                                <img src="/assets/images/home/latest-img-2.png" alt="" />
+                            <a class="blog-img" href="{{ route('posts.show', $secondLatestIssuePost->slug) }}">
+                                <img src="{{ asset($secondLatestIssuePost->image) }}" alt="" />
                             </a>
                             <div class="blog-card-content">
                                 <div class="blog-title">
-                                    <a href="/blog-details.html">Govt’s measures preventing brain drain: PM Hasina
-                                        tells
-                                        SangsadHasina tells Sangsad</a>
+                                    <a
+                                        href="{{ route('posts.show', $secondLatestIssuePost->slug) }}">{{ Str::limit($secondLatestIssuePost->title, 70) }}</a>
                                 </div>
-                                <p class="blog-owner">by <span> Maliha Mannan</span></p>
+                                <p class="blog-owner">{{ $secondLatestIssuePost->post_type }} <span>
+                                        {{ $secondLatestIssuePost->author->name }}</span>
+                                </p>
                                 <div class="more-btn">
-                                    <a href="/blog-details.html">more
+                                    <a href="{{ route('posts.show', $secondLatestIssuePost->slug) }}">more
                                         <i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="blog-card-item latest-issue-item-left latest-issue-item">
-                            <div class="blog-card-content blog-card-content-text">
-                                <div class="blog-title">
-                                    <a href="/blog-details.html">Govt’s measures preventing brain drain: PM Hasina
-                                        tells
-                                        Sangsad</a>
-                                </div>
-                                <p class="blog-owner">by <span> Maliha Mannan</span></p>
-                                <div class="more-btn">
-                                    <a href="/blog-details.html">more
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
+
+                        @foreach ($remainingLatestIssuePosts as $post)
+                            <div class="blog-card-item latest-issue-item latest-issue-item-left">
+
+                                <div class="blog-card-content">
+                                    <div class="blog-title">
+                                        <a
+                                            href="{{ route('posts.show', $post->slug) }}">{{ Str::limit($post->title, 70) }}</a>
+                                    </div>
+                                    <p class="blog-owner">{{ $post->post_type }} <span> {{ $post->author->name }}</span>
+                                    </p>
+                                    <div class="more-btn">
+                                        <a href="{{ route('posts.show', $post->slug) }}">more
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

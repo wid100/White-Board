@@ -12,18 +12,8 @@ use App\Models\Editornote;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
 
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
 
     public function index()
     {
@@ -64,12 +54,17 @@ class HomeController extends Controller
 
         $editorPicks = $fetchAndOrderCollection(Editornote::class, $editorPickIds);
         $policyStreams = $fetchAndOrderCollection(PolicyStream::class, $policyStreamIds);
-        $trendingIds = $decodeJsonArray($homeSetting->trending); // Make sure to use the correct field name
+        $trendingIds = $decodeJsonArray($homeSetting->trending); // Corrected field name
         $trendings = $fetchAndOrderCollection(Post::class, $trendingIds);
         $tailoredForPolicymakers = $fetchAndOrderCollection(Post::class, $decodeJsonArray($homeSetting->tailored_for_policymakers));
         $latestIssue = Issue::find($homeSetting->latest_issue);
         $latestIssuePosts = $fetchAndOrderCollection(Post::class, $decodeJsonArray($homeSetting->latest_issue_post));
         $latestCategories = $fetchAndOrderCollection(Category::class, $decodeJsonArray($homeSetting->latest_category));
+
+        // Split the latestIssuePosts into first, second, and remaining
+        $firstLatestIssuePost = $latestIssuePosts->first(); // Get the first post
+        $secondLatestIssuePost = $latestIssuePosts->slice(1, 1)->first(); // Get the second post
+        $remainingLatestIssuePosts = $latestIssuePosts->slice(2); // Get the rest starting from the third
 
         // Second spotlight section
         $spotlightSecondPosts = $fetchAndOrderCollection(Post::class, $spotlightSecondIds);
@@ -85,7 +80,9 @@ class HomeController extends Controller
             'trendings',
             'tailoredForPolicymakers',
             'latestIssue',
-            'latestIssuePosts',
+            'firstLatestIssuePost',       // Pass the first post
+            'secondLatestIssuePost',      // Pass the second post
+            'remainingLatestIssuePosts',  // Pass the remaining posts
             'latestCategories',
             'firstSectionPosts',
             'secondSectionPosts',
