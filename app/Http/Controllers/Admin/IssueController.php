@@ -63,7 +63,6 @@ class IssueController extends Controller
             'editorial_note' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
         // Generate slug from name and issue number
         $slug = Str::slug($validated['name']) . '_' . $validated['issue_number'];
 

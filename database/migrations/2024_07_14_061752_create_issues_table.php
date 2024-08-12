@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('image');
-            $table->string('editorial_note');
+            $table->longText('editorial_note');
             $table->boolean('status')->default(true);
             $table->timestamps();
         });
