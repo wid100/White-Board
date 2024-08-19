@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PolicyStreamController;
+use App\Http\Controllers\Admin\PoliticController;
 use Illuminate\Support\Facades\Artisan;
 
 use App\Http\Controllers\User\PostController as UserPostController;
@@ -72,6 +73,8 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::resource('/tag', TagController::class);
         Route::resource('/home/setting', HomeSettingController::class);
         Route::get('/issue/{id}/posts', [IssueController::class, 'getPosts'])->name('issue.posts');
+
+        Route::resource('/politic', PoliticController::class);
     });
 });
 

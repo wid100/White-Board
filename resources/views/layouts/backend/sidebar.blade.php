@@ -65,6 +65,13 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a href="{{ route('admin.politic.index') }}" class="nav-link">
+                    <i class="link-icon" data-feather="book"></i>
+                    <span class="link-title">Politics</span>
+                </a>
+            </li>
+
             <li class="nav-item nav-category">web apps</li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#setting" role="button" aria-expanded="false"
