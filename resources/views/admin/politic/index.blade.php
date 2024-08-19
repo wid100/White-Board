@@ -42,7 +42,7 @@
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $politic->title }}</td>
-                                            <td>{!! Str::limit($politic->description, 100) !!}</td>
+                                            <td>{!! Str::limit($politic->description, 50) !!}</td>
                                             <td>{{ $politic->name }}</td>
                                             <td>{{ $politic->designation }}</td>
 

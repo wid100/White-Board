@@ -55,98 +55,28 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="slider-item">
-                                        <div class="slider-content-top">
-                                            <h3>Politics</h3>
-                                            <img src="/assets/images/icon/arrow.svg" alt="" />
-                                            <p>
-                                                The answer to the title’s question is no. Let’s keep
-                                                in mind that Bangladesh is the eighth most populous
-                                                The answer to the title’s question is no. Let’s keep
-                                                in mind that Bangladesh is thepopulous The answer to
-                                                the title’s question is no. Let’s keep in
-                                            </p>
-                                        </div>
-                                        <div class="slider-content-botttom">
-                                            <span>……………</span>
-                                            <h4>RAJIB ASHRAF</h4>
-                                            <p>Professior, Scientist,BUET</p>
-                                        </div>
-                                        <div class="slider-shap-img">
-                                            <img src="/assets/images/icon/bottom-shap.png" alt="" />
+                                @foreach ($politics as $politic)
+                                    <div class="swiper-slide">
+                                        <div class="slider-item">
+                                            <div class="slider-content-top">
+                                                <h3>{{ $politic->title }}</h3>
+                                                <img src="/assets/images/icon/arrow.svg" alt="" />
+                                                <p>
+                                                    {!! $politic->description !!}
+                                                </p>
+                                            </div>
+                                            <div class="slider-content-botttom">
+                                                <span>……………</span>
+                                                <h4>{{ $politic->name }}</h4>
+                                                <p>{{ $politic->designation }}</p>
+                                            </div>
+                                            <div class="slider-shap-img">
+                                                <img src="/assets/images/icon/bottom-shap.png" alt="" />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="slider-item">
-                                        <div class="slider-content-top">
-                                            <h3>Politics</h3>
-                                            <img src="/assets/images/icon/arrow.svg" alt="" />
-                                            <p>
-                                                The answer to the title’s question is no. Let’s keep
-                                                in mind that Bangladesh is the eighth most populous
-                                                The answer to the title’s question is no. Let’s keep
-                                                in mind that Bangladesh is thepopulous The answer to
-                                                the title’s question is no. Let’s keep in
-                                            </p>
-                                        </div>
-                                        <div class="slider-content-botttom">
-                                            <span>……………</span>
-                                            <h4>RAJIB ASHRAF</h4>
-                                            <p>Professior, Scientist,BUET</p>
-                                        </div>
-                                        <div class="slider-shap-img">
-                                            <img src="/assets/images/icon/bottom-shap.png" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="slider-item">
-                                        <div class="slider-content-top">
-                                            <h3>Politics</h3>
-                                            <img src="/assets/images/icon/arrow.svg" alt="" />
-                                            <p>
-                                                The answer to the title’s question is no. Let’s keep
-                                                in mind that Bangladesh is the eighth most populous
-                                                The answer to the title’s question is no. Let’s keep
-                                                in mind that Bangladesh is thepopulous The answer to
-                                                the title’s question is no. Let’s keep in
-                                            </p>
-                                        </div>
-                                        <div class="slider-content-botttom">
-                                            <span>……………</span>
-                                            <h4>RAJIB ASHRAF</h4>
-                                            <p>Professior, Scientist,BUET</p>
-                                        </div>
-                                        <div class="slider-shap-img">
-                                            <img src="/assets/images/icon/bottom-shap.png" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="slider-item">
-                                        <div class="slider-content-top">
-                                            <h3>Politics</h3>
-                                            <img src="/assets/images/icon/arrow.svg" alt="" />
-                                            <p>
-                                                The answer to the title’s question is no. Let’s keep
-                                                in mind that Bangladesh is the eighth most populous
-                                                The answer to the title’s question is no. Let’s keep
-                                                in mind that Bangladesh is thepopulous The answer to
-                                                the title’s question is no. Let’s keep in
-                                            </p>
-                                        </div>
-                                        <div class="slider-content-botttom">
-                                            <span>……………</span>
-                                            <h4>RAJIB ASHRAF</h4>
-                                            <p>Professior, Scientist,BUET</p>
-                                        </div>
-                                        <div class="slider-shap-img">
-                                            <img src="/assets/images/icon/bottom-shap.png" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
+
                             </div>
                             <div class="swiper-pagination"></div>
                         </div>
@@ -163,7 +93,8 @@
                                     </div>
                                     <div class="shortlight-card">
                                         <div class="shortlight-img">
-                                            <img src="{{ asset($post->image) }}" alt="{{ $post->title }}" width="100px" />
+                                            <img src="{{ asset($post->image) }}" alt="{{ $post->title }}"
+                                                width="100px" />
                                         </div>
                                         <div>
                                             <p>
@@ -383,8 +314,8 @@
                 </div>
                 <div class="explore-right">
                     <!-- <div class="explore-img">
-                                                                                                                                                                                                                                                                                                                                  <img src="/assets/images/home/explore.png" alt="" />
-                                                                                                                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                                              <img src="/assets/images/home/explore.png" alt="" />
+                                                                                                                                                                                                                                                                                                                                            </div> -->
                     <div class="explore-content">
                         <p>
                             Find out why <span>WhiteBoard</span> is the go to place for

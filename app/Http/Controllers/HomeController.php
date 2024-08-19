@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Issue;
 use App\Models\PolicyStream;
 use App\Models\Editornote;
+use App\Models\Politic;
 
 class HomeController extends Controller
 {
@@ -29,6 +30,9 @@ class HomeController extends Controller
             }
             return [];
         };
+
+        $politics = Politic::where('status', 1)->get();
+
 
         // Generic function to fetch and order collections based on IDs
         $fetchAndOrderCollection = function ($model, $ids) {
@@ -91,7 +95,8 @@ class HomeController extends Controller
             'categoriesWithLatestPosts',  // Pass the categories with latest posts
             'firstSectionPosts',
             'secondSectionPosts',
-            'latest5Issues'
+            'latest5Issues',
+            'politics'
         ));
     }
 }
