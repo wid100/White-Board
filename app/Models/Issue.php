@@ -33,6 +33,11 @@ class Issue extends Model
         return $this->belongsTo(Month::class, 'issue_month', 'id');
     }
 
+    public function editornote()
+    {
+        return $this->belongsTo(Editornote::class);
+    }
+
     // Define the inverse relationship with Post
     public function posts()
     {

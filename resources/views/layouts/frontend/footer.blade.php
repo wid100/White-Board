@@ -4,10 +4,10 @@
         <div class="footer-wrapper">
             <div class="footer-header">
                 <a href="/" class="footer-logo">
-                    <img src="/assets/images/footer-logo.png" alt="" />
+                    <img src="{{ asset('/frontend/images/footer-logo.png') }}" alt="" />
                 </a>
                 <button id="scroll-top" title="Back to Top" class="show">
-                    <img src="/assets/images/footer-right-icon.png" alt="" />
+                    <img src="{{ asset('/frontend/images/footer-right-icon.png') }}" alt="" />
                 </button>
             </div>
             <div class="footer-content"></div>
@@ -126,7 +126,7 @@
                         <i class="fas fa-times"></i>
                     </button>
                     <div class="form-logo">
-                        <img src="assets/images/icon/user.png" alt="" />
+                        <img src="{{ asset('frontend/images/icon/user.png') }}" alt="" />
                     </div>
                     <div class="form-input-items">
                         <div class="form-input-item">
@@ -155,7 +155,7 @@
                         </div>
                     </div>
                     <div class="form-shap-img">
-                        <img src="assets/images/icon/bottom-shap.svg" alt="" />
+                        <img src="{{ asset('frontend/images/icon/bottom-shap.svg') }}" alt="" />
                     </div>
                 </div>
             </form>
@@ -233,7 +233,7 @@
                         </div>
                     </div>
                     <div class="form-shap-img">
-                        <img src="assets/images/icon/bottom-shap.svg" alt="" />
+                        <img src="{{ asset('frontend/images/icon/bottom-shap.svg') }}" alt="" />
                     </div>
                 </div>
             </form>

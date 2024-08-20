@@ -13,4 +13,9 @@ class Editornote extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function issue()
+    {
+        return $this->hasOne(Issue::class);
+    }
 }

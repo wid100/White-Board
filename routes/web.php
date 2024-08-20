@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PolicyStreamController;
 use App\Http\Controllers\Admin\PoliticController;
 use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\IssueController as FrontendIssueController;
 
 use App\Http\Controllers\User\PostController as UserPostController;
 
@@ -54,7 +55,7 @@ Route::get('/', [HomeController::class, 'index'])->name('root');
 
 Route::get('/posts/{post}', [UserPostController::class, 'show'])->name('posts.show');
 Route::get('/policy-streams/{policyStream}', [PolicyStreamController::class, 'show'])->name('policy-streams.show');
-
+Route::get('/issue', [FrontendIssueController::class, 'index'])->name('issue');
 Auth::routes();
 
 // Route::get('/home', [HomeController::class, 'index'])->name('home');

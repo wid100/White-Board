@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="header-top-wrapper">
                     <a href="/" class="logo">
-                        <img src="/assets/images/logo.png" alt="" />
+                        <img src="{{ asset('/frontend/images/logo.png') }}" alt="" />
                     </a>
                     <form action="">
                         <div class="form-search">
@@ -19,7 +19,7 @@
                             <a href="" data-bs-toggle="modal" data-bs-target="#loginModel">LOG IN</a>
                         </div>
                         <div class="hamburger-menu">
-                            <img src="/assets/images/menu.svg" alt="" />
+                            <img src="{{ asset('/frontend/images/menu.svg') }}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -30,11 +30,11 @@
                 <div class="header-menu">
                     <div class="mobile-menu-overlay"></div>
                     <div class="close-btn">
-                        <img src="/assets/images/close.svg" alt="" />
+                        <img src="{{ asset('/frontend/images/close.svg') }}" alt="" />
                     </div>
                     <div class="header-left">
                         <a href="/" class="logo-mobile">
-                            <img src="/assets/images/footer-logo.png" alt="" />
+                            <img src="{{ asset('/frontend/images/footer-logo.png') }}" alt="" />
                         </a>
                         <form action="">
                             <div class="form-search-mobile">
