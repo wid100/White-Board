@@ -56,6 +56,8 @@ Route::get('/', [HomeController::class, 'index'])->name('root');
 Route::get('/posts/{post}', [UserPostController::class, 'show'])->name('posts.show');
 Route::get('/policy-streams/{policyStream}', [PolicyStreamController::class, 'show'])->name('policy-streams.show');
 Route::get('/issue', [FrontendIssueController::class, 'index'])->name('issue');
+Route::get('/issues-by-year/{year}', [FrontendIssueController::class, 'getIssuesByYear'])->name('issues.by.year');
+
 Auth::routes();
 
 // Route::get('/home', [HomeController::class, 'index'])->name('home');

@@ -129,10 +129,32 @@
                     </div>
                 </div>
                 <div class="issue-filter-content">
+                    @if (isset($yearIssues) && $yearIssues->isNotEmpty())
+                        <div class="issue-filter-item">
+                            <h4>{{ $yearModel->year }}</h4>
+                            <div class="row">
+                                @foreach ($yearIssues as $issue)
+                                    <div class="col-md-3">
+                                        <div class="recent-issue-item">
+                                            <a href="">
+                                                <div class="recent-img">
+                                                    <img src="{{ $issue->image }}" alt="" />
+                                                </div>
+                                                <p>{{ $issue->month->name }} {{ $yearModel->year }}</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @else
+                        <p>Select a year to see the issues.</p>
+                    @endif
+
                     @foreach ($lastThreeYears as $year)
                         @php
-                            $yearId = $year->id; // Get the year ID
-                            $yearIssues = $lastThreeYearsIssues->get($yearId); // Get the issues for this year
+                            $yearId = $year->id;
+                            $yearIssues = $lastThreeYearsIssues->get($yearId);
                         @endphp
                         @if ($yearIssues)
                             <div class="issue-filter-item">
@@ -155,8 +177,64 @@
                         @endif
                     @endforeach
                 </div>
+
             </div>
         </div>
     </section>
     <!-- ========= Thoughts in Motion ========== -->
+@endsection
+
+@section('js')
+    <script>
+        $(document).ready(function() {
+            $('.issue-item-year button').on('click', function() {
+                var year = $(this).text();
+
+                $.ajax({
+                    url: '/issues-by-year/' + year,
+                    type: 'GET',
+                    success: function(response) {
+                        if (response.status === 'success') {
+                            var issues = response.yearIssues;
+                            var content = '';
+
+                            if (issues.length > 0) {
+                                content += '<div class="issue-filter-item">';
+                                content += '<h4>' + year + '</h4>';
+                                content += '<div class="row">';
+
+                                issues.forEach(function(issue) {
+                                    content += '<div class="col-md-3">';
+                                    content += '<div class="recent-issue-item">';
+                                    content += '<a href="/issue-details/' + issue.id +
+                                        '">';
+                                    content += '<div class="recent-img">';
+                                    content += '<img src="' + issue.image +
+                                        '" alt="" />';
+                                    content += '</div>';
+                                    content += '<p>' + issue.month.name + ' ' + year +
+                                        '</p>';
+                                    content += '</a>';
+                                    content += '</div>';
+                                    content += '</div>';
+                                });
+
+                                content += '</div>';
+                                content += '</div>';
+                            } else {
+                                content = '<p>No issues found for ' + year + '.</p>';
+                            }
+
+                            $('.issue-filter-content').html(content);
+                        } else {
+                            $('.issue-filter-content').html('<p>' + response.message + '</p>');
+                        }
+                    },
+                    error: function() {
+                        alert('An error occurred while fetching the issues.');
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
