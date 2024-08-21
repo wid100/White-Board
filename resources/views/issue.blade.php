@@ -28,7 +28,6 @@
                                 <h4>Editorial Note</h4>
                                 <p>
                                     {!! Str::limit($latestIssue->editornote->description, 500) !!}
-
                                 </p>
                                 <div class="more-btn">
                                     <a href="/blog-details.html">more
@@ -42,6 +41,7 @@
             </div>
         </div>
     </section>
+
     <!-- =============== Issue Filter ============== -->
     <section class="issue-filter" data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
@@ -88,28 +88,31 @@
                                                         </div>
                                                     </div>
                                                 @endforeach
-
                                             </div>
                                             <div class="swiper-button-next"></div>
                                             <div class="swiper-button-prev"></div>
                                         </div>
                                     </div>
+
                                     <div class="tab-pane fade" id="issue" role="tabpanel" aria-labelledby="issue-tab">
                                         <div class="swiper mySwiperIssue mySwiperWrapper">
                                             <div class="swiper-wrapper">
                                                 @foreach ($issues as $issue)
                                                     <div class="swiper-slide">
                                                         <div class="issue-item-num">
-                                                            <button>{{ $issue->issue_number }}</button>
+                                                            <button data-year="{{ $issue->year->year }}"
+                                                                data-issue-id="{{ $issue->id }}">
+                                                                {{ $issue->issue_number }}
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 @endforeach
-
                                             </div>
                                             <div class="swiper-button-next"></div>
                                             <div class="swiper-button-prev"></div>
                                         </div>
                                     </div>
+
                                     <div class="tab-pane fade" id="search" role="tabpanel" aria-labelledby="search-tab">
                                         <form action="">
                                             <div class="issue-search-flied">
@@ -129,28 +132,6 @@
                     </div>
                 </div>
                 <div class="issue-filter-content">
-                    @if (isset($yearIssues) && $yearIssues->isNotEmpty())
-                        <div class="issue-filter-item">
-                            <h4>{{ $yearModel->year }}</h4>
-                            <div class="row">
-                                @foreach ($yearIssues as $issue)
-                                    <div class="col-md-3">
-                                        <div class="recent-issue-item">
-                                            <a href="">
-                                                <div class="recent-img">
-                                                    <img src="{{ $issue->image }}" alt="" />
-                                                </div>
-                                                <p>{{ $issue->month->name }} {{ $yearModel->year }}</p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    @else
-                        <p>Select a year to see the issues.</p>
-                    @endif
-
                     @foreach ($lastThreeYears as $year)
                         @php
                             $yearId = $year->id;
@@ -177,19 +158,29 @@
                         @endif
                     @endforeach
                 </div>
-
             </div>
         </div>
     </section>
-    <!-- ========= Thoughts in Motion ========== -->
 @endsection
 
 @section('js')
     <script>
         $(document).ready(function() {
+            // Event handler for year buttons
             $('.issue-item-year button').on('click', function() {
                 var year = $(this).text();
+                fetchIssuesByYear(year);
+            });
 
+            // Event handler for issue buttons
+            $('.issue-item-num button').on('click', function() {
+                var year = $(this).data('year'); // Get the year from data attribute
+                var issueId = $(this).data('issue-id'); // Get the issue ID from data attribute
+                fetchIssuesByYear(year, issueId);
+            });
+
+            // Function to fetch and display issues by year (and optionally highlight a specific issue)
+            function fetchIssuesByYear(year, highlightIssueId = null) {
                 $.ajax({
                     url: '/issues-by-year/' + year,
                     type: 'GET',
@@ -204,16 +195,16 @@
                                 content += '<div class="row">';
 
                                 issues.forEach(function(issue) {
+                                    var highlightClass = issue.id === highlightIssueId ?
+                                        'highlight' : '';
                                     content += '<div class="col-md-3">';
-                                    content += '<div class="recent-issue-item">';
-                                    content += '<a href="/issue-details/' + issue.id +
-                                        '">';
+                                    content += '<div class="recent-issue-item ' +
+                                        highlightClass + '">';
+                                    content += '<a href="/issue-details/' + issue.id + '">';
                                     content += '<div class="recent-img">';
-                                    content += '<img src="' + issue.image +
-                                        '" alt="" />';
+                                    content += '<img src="' + issue.image + '" alt="" />';
                                     content += '</div>';
-                                    content += '<p>' + issue.month.name + ' ' + year +
-                                        '</p>';
+                                    content += '<p>' + issue.month.name + ' ' + year + '</p>';
                                     content += '</a>';
                                     content += '</div>';
                                     content += '</div>';
@@ -234,7 +225,7 @@
                         alert('An error occurred while fetching the issues.');
                     }
                 });
-            });
+            }
         });
     </script>
 @endsection
